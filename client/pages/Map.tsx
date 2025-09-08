@@ -34,11 +34,28 @@ export default function MapPage() {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(map);
 
-      places.forEach((p) => {
+      const markers: any[] = [];
+      MONASTERIES.forEach((p) => {
         const m = L.marker([p.lat, p.lon]).addTo(map);
-        const links = p.links.map((l) => `<a href="${l.href}" target="_blank" rel="noreferrer" class="underline">${l.label}</a>`).join(" · ");
-        m.bindPopup(`<strong>${p.name}</strong><br/>${p.info}<br/><a href="${p.directions}" target="_blank" rel="noreferrer">Get Directions</a><br/>${links}`);
+        const wiki = (p.links || [])
+          .map((l) => `<a href="${l.href}" target="_blank" rel="noreferrer" class="underline">${l.label}</a>`)
+          .join(" · ");
+        const directions = `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}`;
+        m.bindPopup(`<strong>${p.name}</strong><br/>${p.location}<br/><a href="${directions}" target="_blank" rel="noreferrer">Get Directions</a>${wiki ? `<br/>${wiki}` : ""}`);
+        markers.push({ m, p });
       });
+
+      const hash = window.location.hash.replace("#", "");
+      if (hash) {
+        const [latStr, lonStr] = hash.split(",");
+        const lat = parseFloat(latStr);
+        const lon = parseFloat(lonStr);
+        if (!Number.isNaN(lat) && !Number.isNaN(lon)) {
+          map.setView([lat, lon], 12);
+          const found = markers.find(({ p }) => Math.abs(p.lat - lat) < 0.01 && Math.abs(p.lon - lon) < 0.01);
+          if (found) found.m.openPopup();
+        }
+      }
     });
   }, []);
 
