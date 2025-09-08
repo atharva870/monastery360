@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 8" preserveAspectRatio="none">
+  <rect width="120" height="8" fill="none" />
+  <path d="M0 6 Q6 0 12 6 T24 6 T36 6 T48 6 T60 6 T72 6 T84 6 T96 6 T108 6 T120 6" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5" fill="none" />
+  <path d="M0 2 Q6 8 12 2 T24 2 T36 2 T48 2 T60 2 T72 2 T84 2 T96 2 T108 2 T120 2" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1" fill="none" />
+</svg>
