@@ -130,3 +130,21 @@
     color: hsl(var(--primary-foreground));
   }
 }
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  /* Disable decorative effects */
+  .glow-cta { animation: none !important; box-shadow: none !important; }
+  .hover-float { transform: none !important; }
+  .group:hover img { transform: none !important; }
+  .pattern-jaali { opacity: 0.05; }
+  /* Map animations */
+  .leaflet-zoom-animated { transition: none !important; }
+}
