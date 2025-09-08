@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 import { useParallax } from "@/hooks/use-parallax";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { MONASTERIES } from "@/data/monasteries";
@@ -14,6 +15,8 @@ const IMAGES = {
 };
 
 export default function Index() {
+  const heroRef = useRef<HTMLImageElement | null>(null);
+  useParallax(heroRef, 0.12);
   return (
     <div>
       {/* Hero */}
@@ -24,9 +27,7 @@ export default function Index() {
             alt="Colorful monastic architecture detail in Gangtok, Sikkim"
             className="h-full w-full object-cover will-change-transform"
             loading="eager"
-            ref={(el) => {
-              if (el) useParallax({ current: el }, 0.12);
-            }}
+            ref={heroRef}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background/95" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 mix-blend-overlay bg-pan-slow" />
