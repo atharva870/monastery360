@@ -4,7 +4,7 @@ const tours = [
   {
     title: "Pemayangtse Monastery 360°",
     src: "https://www.360cities.net/en/image/pemayangste-monastery-in-sikkim",
-    embed: "https://www.360cities.net/embed_iframe#pano=pemayangste-monastery-in-sikkim&view=0.00,0.00,70.0,0.00",
+    embed: "https://www.360cities.net/embed_iframe.html?pano=pemayangste-monastery-in-sikkim&view=0.00,0.00,70.0,0.00",
     credit: "360cities",
     langText: {
       en: "Explore Pemayangtse Monastery, founded in the 17th century near Pelling. Rotate the view and zoom in to see the ornate windows and prayer halls.",
@@ -14,7 +14,7 @@ const tours = [
   {
     title: "Tibetan Temple Interior 360°",
     src: "https://www.360cities.net/en/image/interior-tibetan-temple-in-india",
-    embed: "https://www.360cities.net/embed_iframe#pano=interior-tibetan-temple-in-india&view=0.00,0.00,70.0,0.00",
+    embed: "https://www.360cities.net/embed_iframe.html?pano=interior-tibetan-temple-in-india&view=0.00,0.00,70.0,0.00",
     credit: "360cities",
     langText: {
       en: "Rotate inside a richly decorated Tibetan Buddhist temple interior in India—experience the art and ambiance similar to Sikkim’s monasteries.",
@@ -97,6 +97,7 @@ export default function Tours() {
                   title={t.title}
                   className="h-full w-full"
                   allow="fullscreen; vr"
+                  allowFullScreen
                 />
               )}
             </div>
