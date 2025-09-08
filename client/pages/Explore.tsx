@@ -12,7 +12,8 @@ export default function Explore() {
           <div>
             <h1 className="font-serif text-4xl md:text-5xl">Explore</h1>
             <p className="mt-2 max-w-prose text-foreground/70">
-              Discover Sikkim’s monasteries. Open any site on the map to plan your route.
+              Discover Sikkim’s monasteries. Open any site on the map to plan
+              your route.
             </p>
           </div>
         </div>
@@ -20,9 +21,17 @@ export default function Explore() {
         <div className="-mx-4 mb-8 overflow-x-auto px-4">
           <div className="flex snap-x snap-mandatory gap-4">
             {items.slice(0, 12).map((m) => (
-              <div key={m.name} className="snap-start shrink-0 w-72 overflow-hidden rounded-xl border bg-card shadow-sm">
+              <div
+                key={m.name}
+                className="snap-start shrink-0 w-72 overflow-hidden rounded-xl border bg-card shadow-sm"
+              >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img src={m.image} alt={m.name} className="h-full w-full object-cover" loading="lazy" />
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-black/0" />
                 </div>
                 <div className="p-3">
@@ -36,7 +45,10 @@ export default function Explore() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((m) => (
-            <article key={m.name} className="group overflow-hidden rounded-xl border bg-card shadow-sm">
+            <article
+              key={m.name}
+              className="group overflow-hidden rounded-xl border bg-card shadow-sm"
+            >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={m.image}
@@ -75,7 +87,8 @@ export default function Explore() {
       <section className="border-t bg-secondary/40 py-14">
         <div className="container">
           <p className="text-sm text-foreground/70">
-            Looking for a specific monastery or want to contribute photos and oral histories? Reach out and we’ll add it to the archive.
+            Looking for a specific monastery or want to contribute photos and
+            oral histories? Reach out and we’ll add it to the archive.
           </p>
         </div>
       </section>

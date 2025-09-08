@@ -21,7 +21,16 @@ export const EVENTS = [
 ];
 
 export const BOOKINGS = [
-  { label: "Permits (PAP/RAP)", href: "https://sikkimtourism.gov.in/Public/TravellerEssentials/pap" },
-  { label: "Registered Travel Agents", href: "https://sikkimtourism.gov.in/Public/TravellerEssentials/TravelAgents" },
-  { label: "Accommodations", href: "https://sikkimtourism.gov.in/Public/TravellerEssentials/accomodations" },
+  {
+    label: "Permits (PAP/RAP)",
+    href: "https://sikkimtourism.gov.in/Public/TravellerEssentials/pap",
+  },
+  {
+    label: "Registered Travel Agents",
+    href: "https://sikkimtourism.gov.in/Public/TravellerEssentials/TravelAgents",
+  },
+  {
+    label: "Accommodations",
+    href: "https://sikkimtourism.gov.in/Public/TravellerEssentials/accomodations",
+  },
 ];

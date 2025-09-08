@@ -4,7 +4,11 @@ import { EVENTS } from "@/data/calendar";
 import { KBDOCS, KB_NAMES, GENERAL_KB } from "@/data/kb";
 
 function normalize(s: string) {
-  return s.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+  return s
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function diceCoefficient(a: string, b: string) {
@@ -57,7 +61,9 @@ export default function Chatbot() {
       return `We currently list ${MONASTERIES.length} monasteries across Sikkim. Use Explore or Map to browse.`;
     }
     if (/festival|event|calendar/.test(nq)) {
-      const items = EVENTS.map((e) => `${e.name} — ${e.when} · ${e.where}`).join("\n• ");
+      const items = EVENTS.map(
+        (e) => `${e.name} — ${e.when} · ${e.where}`,
+      ).join("\n• ");
       return `Key festivals in Sikkim:\n• ${items}`;
     }
     if (/permit|rap|pap|book|agent|accommodation|stay|hotel/.test(nq)) {
@@ -71,7 +77,10 @@ export default function Chatbot() {
       const withD = MONASTERIES.map((m) => ({ m, d: dist(gangtok, m) }))
         .sort((a, b) => a.d - b.d)
         .slice(0, 5)
-        .map(({ m, d }) => `${m.name} (${m.location}) — ${(d / 1000).toFixed(1)} km`)
+        .map(
+          ({ m, d }) =>
+            `${m.name} (${m.location}) — ${(d / 1000).toFixed(1)} km`,
+        )
         .join("\n• ");
       return `Closest to Gangtok:\n• ${withD}`;
     }
@@ -91,7 +100,9 @@ export default function Chatbot() {
         kb?.founded ? `Founded: ${kb.founded}.` : "",
         kb?.tradition ? `Tradition: ${kb.tradition}.` : "",
         kb?.festivals?.length ? `Festivals: ${kb.festivals.join(", ")}.` : "",
-        kb?.highlights?.length ? `Highlights: ${kb.highlights.join(", ")}.` : "",
+        kb?.highlights?.length
+          ? `Highlights: ${kb.highlights.join(", ")}.`
+          : "",
         kb?.tips?.length ? `Tips: ${kb.tips.join("; ")}.` : "",
         `Location on Map tab: ${m.lat.toFixed(4)}, ${m.lon.toFixed(4)}.`,
       ].filter(Boolean);
@@ -113,14 +124,19 @@ export default function Chatbot() {
     return "I couldn’t find that yet. Ask about a specific monastery, festival dates, permits or etiquette.";
   };
 
-  function dist(a: { lat: number; lon: number }, b: { lat: number; lon: number }) {
+  function dist(
+    a: { lat: number; lon: number },
+    b: { lat: number; lon: number },
+  ) {
     const R = 6371e3;
     const toRad = (x: number) => (x * Math.PI) / 180;
     const dLat = toRad(b.lat - a.lat);
     const dLon = toRad(b.lon - a.lon);
     const lat1 = toRad(a.lat);
     const lat2 = toRad(b.lat);
-    const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon / 2) ** 2;
+    const h =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon / 2) ** 2;
     return 2 * R * Math.asin(Math.sqrt(h));
   }
 
@@ -144,16 +160,28 @@ export default function Chatbot() {
         >
           <div className="flex items-center justify-between border-b p-3">
             <p className="font-serif">Sikkim Monasteries Chat</p>
-            <button className="rounded-full border px-2 py-1 text-xs" onClick={() => setOpen(false)} aria-label="Close chat">
+            <button
+              className="rounded-full border px-2 py-1 text-xs"
+              onClick={() => setOpen(false)}
+              aria-label="Close chat"
+            >
               Close
             </button>
           </div>
-          <div ref={listRef} className="max-h-[50vh] space-y-3 overflow-y-auto p-3">
+          <div
+            ref={listRef}
+            className="max-h-[50vh] space-y-3 overflow-y-auto p-3"
+          >
             {messages.map((m, i) => (
-              <div key={i} className={m.role === "user" ? "text-right" : "text-left"}>
+              <div
+                key={i}
+                className={m.role === "user" ? "text-right" : "text-left"}
+              >
                 <div
                   className={`inline-block max-w-[85%] rounded-2xl px-3 py-2 text-sm ${
-                    m.role === "user" ? "bg-primary text-primary-foreground" : "bg-secondary"
+                    m.role === "user"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary"
                   }`}
                 >
                   {m.content.split("\n").map((line, j) => (
@@ -165,7 +193,10 @@ export default function Chatbot() {
               </div>
             ))}
           </div>
-          <form onSubmit={onSubmit} className="flex items-center gap-2 border-t p-3">
+          <form
+            onSubmit={onSubmit}
+            className="flex items-center gap-2 border-t p-3"
+          >
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -173,7 +204,10 @@ export default function Chatbot() {
               className="flex-1 rounded-full border bg-background px-3 py-2 text-sm"
               aria-label="Chat input"
             />
-            <button className="rounded-full bg-primary px-4 py-2 text-sm text-primary-foreground" aria-label="Send message">
+            <button
+              className="rounded-full bg-primary px-4 py-2 text-sm text-primary-foreground"
+              aria-label="Send message"
+            >
               Send
             </button>
           </form>

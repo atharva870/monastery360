@@ -6,13 +6,51 @@
 @tailwind utilities;
 
 /* Pattern utilities and subtle effects */
-.pattern-jaali { background-image: url('/patterns/jaali.svg'); background-size: 24px 24px; background-repeat: repeat; opacity: 0.15; }
-.pattern-border { background-image: url('/patterns/border-motif.svg'); background-size: auto 8px; background-repeat: repeat-x; }
+.pattern-jaali {
+  background-image: url("/patterns/jaali.svg");
+  background-size: 24px 24px;
+  background-repeat: repeat;
+  opacity: 0.15;
+}
+.pattern-border {
+  background-image: url("/patterns/border-motif.svg");
+  background-size: auto 8px;
+  background-repeat: repeat-x;
+}
 
-@keyframes float-soft { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
-@keyframes glow-pulse { 0%,100% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0.0); } 50% { box-shadow: 0 0 0 8px hsl(var(--accent) / 0.08);} }
-@keyframes bg-pan { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-.bg-pan-slow { background-size: 200% 200%; animation: bg-pan 12s ease-in-out infinite; }
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 hsl(var(--accent) / 0);
+  }
+  50% {
+    box-shadow: 0 0 0 8px hsl(var(--accent) / 0.08);
+  }
+}
+@keyframes bg-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.bg-pan-slow {
+  background-size: 200% 200%;
+  animation: bg-pan 12s ease-in-out infinite;
+}
 
 @layer base {
   /**
@@ -116,16 +154,27 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-serif tracking-tight text-foreground;
   }
 
-  a, button, input, select, textarea {
+  a,
+  button,
+  input,
+  select,
+  textarea {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 
-  .hover-float:hover { transform: translateY(-2px); }
-  .glow-cta { animation: glow-pulse 2.5s ease-in-out infinite; }
+  .hover-float:hover {
+    transform: translateY(-2px);
+  }
+  .glow-cta {
+    animation: glow-pulse 2.5s ease-in-out infinite;
+  }
 
   ::selection {
     background: hsl(var(--primary));
@@ -135,18 +184,33 @@
 
 /* Accessibility: reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within { scroll-behavior: auto; }
-  *, *::before, *::after {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     animation-delay: 0ms !important;
     transition-duration: 0.01ms !important;
   }
   /* Disable decorative effects */
-  .glow-cta { animation: none !important; box-shadow: none !important; }
-  .hover-float { transform: none !important; }
-  .group:hover img { transform: none !important; }
-  .pattern-jaali { opacity: 0.05; }
+  .glow-cta {
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  .hover-float {
+    transform: none !important;
+  }
+  .group:hover img {
+    transform: none !important;
+  }
+  .pattern-jaali {
+    opacity: 0.05;
+  }
   /* Map animations */
-  .leaflet-zoom-animated { transition: none !important; }
+  .leaflet-zoom-animated {
+    transition: none !important;
+  }
 }

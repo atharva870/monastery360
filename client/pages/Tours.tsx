@@ -4,7 +4,8 @@ const tours = [
   {
     title: "Pemayangtse Monastery 360°",
     src: "https://www.360cities.net/en/image/pemayangste-monastery-in-sikkim",
-    embed: "https://www.360cities.net/embed_iframe.html?pano=pemayangste-monastery-in-sikkim&view=0.00,0.00,70.0,0.00",
+    embed:
+      "https://www.360cities.net/embed_iframe.html?pano=pemayangste-monastery-in-sikkim&view=0.00,0.00,70.0,0.00",
     credit: "360cities",
     langText: {
       en: "Explore Pemayangtse Monastery, founded in the 17th century near Pelling. Rotate the view and zoom in to see the ornate windows and prayer halls.",
@@ -14,7 +15,8 @@ const tours = [
   {
     title: "Tibetan Temple Interior 360°",
     src: "https://www.360cities.net/en/image/interior-tibetan-temple-in-india",
-    embed: "https://www.360cities.net/embed_iframe.html?pano=interior-tibetan-temple-in-india&view=0.00,0.00,70.0,0.00",
+    embed:
+      "https://www.360cities.net/embed_iframe.html?pano=interior-tibetan-temple-in-india&view=0.00,0.00,70.0,0.00",
     credit: "360cities",
     langText: {
       en: "Rotate inside a richly decorated Tibetan Buddhist temple interior in India—experience the art and ambiance similar to Sikkim’s monasteries.",
@@ -31,12 +33,18 @@ export default function Tours() {
   useEffect(() => {
     const onVoicesChanged = () => {
       voicesRef.current = window.speechSynthesis.getVoices();
-      const preferred = voicesRef.current.find((v) => v.lang.toLowerCase().startsWith(lang));
+      const preferred = voicesRef.current.find((v) =>
+        v.lang.toLowerCase().startsWith(lang),
+      );
       setVoice(preferred || voicesRef.current[0] || null);
     };
     onVoicesChanged();
     window.speechSynthesis.addEventListener("voiceschanged", onVoicesChanged);
-    return () => window.speechSynthesis.removeEventListener("voiceschanged", onVoicesChanged);
+    return () =>
+      window.speechSynthesis.removeEventListener(
+        "voiceschanged",
+        onVoicesChanged,
+      );
   }, [lang]);
 
   const speak = (text: string) => {
@@ -54,11 +62,14 @@ export default function Tours() {
         <div>
           <h1 className="font-serif text-3xl md:text-4xl">Virtual Tours</h1>
           <p className="mt-2 max-w-prose text-foreground/70">
-            360° panoramas and narrated walkthroughs of Sikkim’s monasteries using real sources.
+            360° panoramas and narrated walkthroughs of Sikkim’s monasteries
+            using real sources.
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <label htmlFor="lang" className="text-sm text-foreground/70">Language</label>
+          <label htmlFor="lang" className="text-sm text-foreground/70">
+            Language
+          </label>
           <select
             id="lang"
             className="rounded-md border bg-background px-2 py-1 text-sm"
@@ -130,7 +141,8 @@ export default function Tours() {
       </div>
 
       <p className="mt-6 text-xs text-foreground/60">
-        Credits: 360Cities panoramas and public YouTube walkthroughs. Captions can be auto-translated in player settings.
+        Credits: 360Cities panoramas and public YouTube walkthroughs. Captions
+        can be auto-translated in player settings.
       </p>
     </div>
   );

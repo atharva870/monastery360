@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 
-export function useParallax(el: React.RefObject<HTMLElement | null>, speed = 0.2) {
+export function useParallax(
+  el: React.RefObject<HTMLElement | null>,
+  speed = 0.2,
+) {
   useEffect(() => {
     const node = el.current as HTMLElement | null;
     if (!node) return;

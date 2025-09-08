@@ -4,7 +4,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  NavLink,
+  useLocation,
+} from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Explore from "./pages/Explore";
@@ -23,7 +30,10 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-accent/30 bg-gradient-to-r from-primary/95 to-accent/90 text-primary-foreground">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="group inline-flex items-center gap-2 text-primary-foreground">
+        <Link
+          to="/"
+          className="group inline-flex items-center gap-2 text-primary-foreground"
+        >
           <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/90 text-primary-foreground shadow-sm">
             <span className="h-2 w-2 rounded-full bg-primary-foreground/90" />
           </span>
@@ -32,25 +42,61 @@ function Header() {
           </span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex text-primary-foreground">
-          <NavLink to="/" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`} end>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+            }
+            end
+          >
             Home
           </NavLink>
-          <NavLink to="/explore" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`}>
+          <NavLink
+            to="/explore"
+            className={({ isActive }) =>
+              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+            }
+          >
             Explore
           </NavLink>
-          <NavLink to="/tours" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`}>
+          <NavLink
+            to="/tours"
+            className={({ isActive }) =>
+              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+            }
+          >
             Tours
           </NavLink>
-          <NavLink to="/map" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`}>
+          <NavLink
+            to="/map"
+            className={({ isActive }) =>
+              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+            }
+          >
             Map
           </NavLink>
-          <NavLink to="/archives" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`}>
+          <NavLink
+            to="/archives"
+            className={({ isActive }) =>
+              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+            }
+          >
             Archives
           </NavLink>
-          <NavLink to="/guide" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`}>
+          <NavLink
+            to="/guide"
+            className={({ isActive }) =>
+              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+            }
+          >
             Audio Guide
           </NavLink>
-          <NavLink to="/calendar" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`}>
+          <NavLink
+            to="/calendar"
+            className={({ isActive }) =>
+              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+            }
+          >
             Calendar
           </NavLink>
         </nav>
@@ -72,7 +118,10 @@ function Header() {
             Our Mission
           </a>
         </div>
-        <div className="pointer-events-none pattern-border absolute inset-x-0 bottom-0 h-2 opacity-80" aria-hidden="true" />
+        <div
+          className="pointer-events-none pattern-border absolute inset-x-0 bottom-0 h-2 opacity-80"
+          aria-hidden="true"
+        />
       </div>
     </header>
   );
@@ -81,12 +130,16 @@ function Header() {
 function Footer() {
   return (
     <footer className="relative border-t border-accent/30 bg-secondary">
-      <div className="pointer-events-none pattern-border absolute inset-x-0 top-0 h-2 opacity-80" aria-hidden="true" />
+      <div
+        className="pointer-events-none pattern-border absolute inset-x-0 top-0 h-2 opacity-80"
+        aria-hidden="true"
+      />
       <div className="container grid gap-6 py-12 md:grid-cols-2 md:gap-8">
         <div>
           <p className="font-serif text-lg">Digitize. Preserve. Discover.</p>
           <p className="mt-2 max-w-prose text-sm text-foreground/70">
-            A minimal, modern archive celebrating the sacred monasteries of Sikkim—built for travelers, researchers, and future generations.
+            A minimal, modern archive celebrating the sacred monasteries of
+            Sikkim—built for travelers, researchers, and future generations.
           </p>
         </div>
         <div className="flex items-end justify-start gap-3 md:justify-end">
@@ -100,7 +153,9 @@ function Footer() {
             <Instagram className="h-4 w-4" />
             Follow on Instagram
           </a>
-          <p className="text-sm text-foreground/60">© {new Date().getFullYear()} Monasteries of Sikkim</p>
+          <p className="text-sm text-foreground/60">
+            © {new Date().getFullYear()} Monasteries of Sikkim
+          </p>
         </div>
       </div>
     </footer>

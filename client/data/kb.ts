@@ -17,8 +17,15 @@ export const KBDOCS: Record<string, MonasteryInfo> = {
     founded: "16th century; rebuilt in the 1960s",
     tradition: "Karma Kagyu",
     festivals: ["Losar", "Kagyed", "Drupchen rituals"],
-    highlights: ["Main prayer hall with intricate woodwork", "Kora around the complex", "Black Hat ceremonies on select dates"],
-    tips: ["Located ~24 km from Gangtok near Rumtek village", "Dress modestly; remove hats in shrine"],
+    highlights: [
+      "Main prayer hall with intricate woodwork",
+      "Kora around the complex",
+      "Black Hat ceremonies on select dates",
+    ],
+    tips: [
+      "Located ~24 km from Gangtok near Rumtek village",
+      "Dress modestly; remove hats in shrine",
+    ],
   },
   "Pemayangtse Monastery": {
     summary:
@@ -35,7 +42,10 @@ export const KBDOCS: Record<string, MonasteryInfo> = {
     founded: "17th century",
     tradition: "Nyingma",
     festivals: ["Bumchu (Feb–Mar)"],
-    highlights: ["Chortens and holy inscriptions", "Hilltop setting between Rathong and Rangeet rivers"],
+    highlights: [
+      "Chortens and holy inscriptions",
+      "Hilltop setting between Rathong and Rangeet rivers",
+    ],
   },
   "Enchey Monastery": {
     summary:
@@ -118,8 +128,7 @@ export const KBDOCS: Record<string, MonasteryInfo> = {
       "Historic site near Namchi; name means 'promise'—visitors traditionally tie a cloth for good fortune.",
   },
   "Kartok Monastery": {
-    summary:
-      "Small monastery near the scenic Kartok Lake at Yuksom.",
+    summary: "Small monastery near the scenic Kartok Lake at Yuksom.",
   },
   "Gonjang Monastery": {
     summary:
@@ -135,8 +144,7 @@ export const KBDOCS: Record<string, MonasteryInfo> = {
       "Monastery near West Sikkim’s Phamrong area, often visited with nearby waterfalls and trails.",
   },
   "Yangthang Monastery": {
-    summary:
-      "Local monastery in West Sikkim serving surrounding villages.",
+    summary: "Local monastery in West Sikkim serving surrounding villages.",
   },
 };
 
