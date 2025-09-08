@@ -14,6 +14,7 @@ import MapPage from "./pages/Map";
 import Archives from "./pages/Archives";
 import Guide from "./pages/Guide";
 import Calendar from "./pages/Calendar";
+import { Instagram } from "lucide-react";
 
 const queryClient = new QueryClient();
 
@@ -52,13 +53,24 @@ function Header() {
             Calendar
           </NavLink>
         </nav>
-        <a
-          href="#mission"
-          className="hidden rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90 md:inline-flex"
-          aria-label="Jump to mission section"
-        >
-          Our Mission
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href="https://www.instagram.com/monastery360/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border bg-background text-foreground/80 transition hover:bg-accent hover:text-foreground"
+            aria-label="Open Instagram @monastery360"
+          >
+            <Instagram className="h-4 w-4" />
+          </a>
+          <a
+            href="#mission"
+            className="hidden rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90 md:inline-flex"
+            aria-label="Jump to mission section"
+          >
+            Our Mission
+          </a>
+        </div>
       </div>
     </header>
   );
@@ -74,7 +86,17 @@ function Footer() {
             A minimal, modern archive celebrating the sacred monasteries of Sikkim—built for travelers, researchers, and future generations.
           </p>
         </div>
-        <div className="flex items-end justify-start md:justify-end">
+        <div className="flex items-end justify-start gap-3 md:justify-end">
+          <a
+            href="https://www.instagram.com/monastery360/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-foreground/70 underline-offset-4 hover:underline"
+            aria-label="Follow on Instagram"
+          >
+            <Instagram className="h-4 w-4" />
+            Follow on Instagram
+          </a>
           <p className="text-sm text-foreground/60">© {new Date().getFullYear()} Monasteries of Sikkim</p>
         </div>
       </div>
