@@ -15,6 +15,7 @@ import Archives from "./pages/Archives";
 import Guide from "./pages/Guide";
 import Calendar from "./pages/Calendar";
 import { Instagram } from "lucide-react";
+import Chatbot from "./components/chat/Chatbot";
 
 const queryClient = new QueryClient();
 
