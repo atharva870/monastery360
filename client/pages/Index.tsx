@@ -23,6 +23,7 @@ export default function Index() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background/95" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 mix-blend-overlay" />
+          <div className="pattern-jaali absolute inset-0" aria-hidden="true" />
         </div>
         <div className="container flex min-h-[70vh] flex-col items-start justify-end py-24 sm:min-h-[80vh]">
           <h1 className="max-w-3xl font-serif text-4xl text-white sm:text-5xl md:text-6xl">
