@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import { useParallax } from "@/hooks/use-parallax";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { MONASTERIES } from "@/data/monasteries";
+import { motion } from "framer-motion";
 
 const IMAGES = {
   hero:
@@ -18,20 +22,23 @@ export default function Index() {
           <img
             src={IMAGES.hero}
             alt="Colorful monastic architecture detail in Gangtok, Sikkim"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover will-change-transform"
             loading="eager"
+            ref={(el) => {
+              if (el) useParallax({ current: el }, 0.12);
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background/95" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 mix-blend-overlay bg-pan-slow" />
           <div className="pattern-jaali absolute inset-0" aria-hidden="true" />
         </div>
         <div className="container flex min-h-[70vh] flex-col items-start justify-end py-24 sm:min-h-[80vh]">
-          <h1 className="max-w-3xl font-serif text-4xl text-white sm:text-5xl md:text-6xl">
+          <motion.h1 className="max-w-3xl font-serif text-4xl text-white sm:text-5xl md:text-6xl" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.6 }} transition={{ duration: 0.4, ease: "easeOut" }}>
             Digitize and Showcase the Monasteries of Sikkim
-          </h1>
-          <p className="mt-4 max-w-2xl text-white/85">
+          </motion.h1>
+          <motion.p className="mt-4 max-w-2xl text-white/85" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.6 }} transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}>
             A minimal, elegant archive celebrating sacred Himalayan heritage—built for travelers, researchers, and future generations.
-          </p>
+          </motion.p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               to="/explore"
@@ -52,7 +59,7 @@ export default function Index() {
       {/* Featured */}
       <section className="container py-16 md:py-20">
         <div className="mb-10 flex items-end justify-between">
-          <h2 className="font-serif text-3xl md:text-4xl">Featured Monasteries</h2>
+          <motion.h2 className="font-serif text-3xl md:text-4xl" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, ease: "easeOut" }}>Featured Monasteries</motion.h2>
           <Link to="/explore" className="text-sm text-foreground/70 hover:text-foreground">
             View all →
           </Link>
@@ -76,6 +83,35 @@ export default function Index() {
             </article>
           ))}
         </div>
+      </section>
+
+      {/* Highlights Carousel */}
+      <section className="container py-10">
+        <motion.h2 className="mb-4 font-serif text-2xl" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          Across Sikkim
+        </motion.h2>
+        <Carousel opts={{ align: "start", loop: true }}>
+          <CarouselContent>
+            {MONASTERIES.slice(0, 10).map((m) => (
+              <CarouselItem key={m.name} className="md:basis-1/2 lg:basis-1/3">
+                <div className="overflow-hidden rounded-xl border bg-card shadow-sm hover-float">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img src={m.image} alt={m.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-black/0" />
+                  </div>
+                  <div className="p-3">
+                    <p className="font-serif text-base">{m.name}</p>
+                    <p className="text-xs text-foreground/60">{m.location}</p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="mt-3 flex items-center justify-end gap-2">
+            <CarouselPrevious />
+            <CarouselNext />
+          </div>
+        </Carousel>
       </section>
 
       {/* Mission */}
