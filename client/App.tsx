@@ -117,9 +117,10 @@ if ("serviceWorker" in navigator) {
 
 function PageTransition({ children }: { children: React.ReactNode }) {
   const shouldReduce = useReducedMotion();
+  const location = useLocation();
   return (
     <motion.div
-      key={useLocation().pathname}
+      key={location.pathname}
       initial={{ opacity: 0, y: shouldReduce ? 0 : 8 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: shouldReduce ? 0 : -8 }}
