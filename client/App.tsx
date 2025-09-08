@@ -20,45 +20,45 @@ const queryClient = new QueryClient();
 
 function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-accent/30 bg-gradient-to-r from-primary/95 to-accent/90 text-primary-foreground">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="group inline-flex items-center gap-2">
+        <Link to="/" className="group inline-flex items-center gap-2 text-primary-foreground">
           <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/90 text-primary-foreground shadow-sm">
             <span className="h-2 w-2 rounded-full bg-primary-foreground/90" />
           </span>
-          <span className="font-serif text-xl tracking-tight text-foreground group-hover:text-foreground/90">
+          <span className="font-serif text-xl tracking-tight text-primary-foreground group-hover:opacity-90">
             Monasteries of Sikkim
           </span>
         </Link>
-        <nav className="hidden items-center gap-6 md:flex">
-          <NavLink to="/" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`} end>
+        <nav className="hidden items-center gap-6 md:flex text-primary-foreground">
+          <NavLink to="/" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`} end>
             Home
           </NavLink>
-          <NavLink to="/explore" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`}>
+          <NavLink to="/explore" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`}>
             Explore
           </NavLink>
-          <NavLink to="/tours" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`}>
+          <NavLink to="/tours" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`}>
             Tours
           </NavLink>
-          <NavLink to="/map" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`}>
+          <NavLink to="/map" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`}>
             Map
           </NavLink>
-          <NavLink to="/archives" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`}>
+          <NavLink to="/archives" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`}>
             Archives
           </NavLink>
-          <NavLink to="/guide" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`}>
+          <NavLink to="/guide" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`}>
             Audio Guide
           </NavLink>
-          <NavLink to="/calendar" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`}>
+          <NavLink to="/calendar" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`}>
             Calendar
           </NavLink>
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-primary-foreground">
           <a
             href="https://www.instagram.com/monastery360/"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border bg-background text-foreground/80 transition hover:bg-accent hover:text-foreground"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white transition hover:bg-white/20"
             aria-label="Open Instagram @monastery360"
           >
             <Instagram className="h-4 w-4" />
@@ -78,7 +78,7 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border/60 bg-background">
+    <footer className="border-t border-accent/30 bg-secondary">
       <div className="container grid gap-6 py-10 md:grid-cols-2 md:gap-8">
         <div>
           <p className="font-serif text-lg">Digitize. Preserve. Discover.</p>
