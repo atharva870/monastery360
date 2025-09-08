@@ -79,7 +79,7 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="border-t border-accent/30 bg-secondary">
+    <footer className="relative border-t border-accent/30 bg-secondary">
       <div className="container grid gap-6 py-10 md:grid-cols-2 md:gap-8">
         <div>
           <p className="font-serif text-lg">Digitize. Preserve. Discover.</p>
