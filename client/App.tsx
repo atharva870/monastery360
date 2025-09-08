@@ -32,25 +32,25 @@ function Header() {
           </span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
-          <NavLink to="/" className={({ isActive }) => `text-sm transition-colors ${isActive ? "text-foreground" : "text-foreground/70 hover:text-foreground"}`} end>
+          <NavLink to="/" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`} end>
             Home
           </NavLink>
-          <NavLink to="/explore" className={({ isActive }) => `text-sm transition-colors ${isActive ? "text-foreground" : "text-foreground/70 hover:text-foreground"}`}>
+          <NavLink to="/explore" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`}>
             Explore
           </NavLink>
-          <NavLink to="/tours" className={({ isActive }) => `text-sm transition-colors ${isActive ? "text-foreground" : "text-foreground/70 hover:text-foreground"}`}>
+          <NavLink to="/tours" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`}>
             Tours
           </NavLink>
-          <NavLink to="/map" className={({ isActive }) => `text-sm transition-colors ${isActive ? "text-foreground" : "text-foreground/70 hover:text-foreground"}`}>
+          <NavLink to="/map" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`}>
             Map
           </NavLink>
-          <NavLink to="/archives" className={({ isActive }) => `text-sm transition-colors ${isActive ? "text-foreground" : "text-foreground/70 hover:text-foreground"}`}>
+          <NavLink to="/archives" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`}>
             Archives
           </NavLink>
-          <NavLink to="/guide" className={({ isActive }) => `text-sm transition-colors ${isActive ? "text-foreground" : "text-foreground/70 hover:text-foreground"}`}>
+          <NavLink to="/guide" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`}>
             Audio Guide
           </NavLink>
-          <NavLink to="/calendar" className={({ isActive }) => `text-sm transition-colors ${isActive ? "text-foreground" : "text-foreground/70 hover:text-foreground"}`}>
+          <NavLink to="/calendar" className={({ isActive }) => `py-2 text-[15px] font-medium transition-colors ${isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"}`}>
             Calendar
           </NavLink>
         </nav>
