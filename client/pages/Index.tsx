@@ -59,12 +59,12 @@ export default function Index() {
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[IMAGES.hero, IMAGES.a, IMAGES.b].map((src, i) => (
-            <article key={src} className="group overflow-hidden rounded-xl border bg-card shadow-sm transition hover:ring-2 hover:ring-accent/30">
+            <article key={src} className="group overflow-hidden rounded-xl border bg-card shadow-sm transition hover:ring-2 hover:ring-accent/30 hover-float">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={src}
                   alt={i === 0 ? "Monastic architecture in Gangtok, Sikkim" : i === 1 ? "Buddhist temple interior with vibrant art" : "Ancient stupas in the mountains"}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
                   loading="lazy"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-black/0" />
@@ -80,6 +80,7 @@ export default function Index() {
 
       {/* Mission */}
       <section id="mission" className="relative border-y bg-secondary py-16 md:py-20">
+        <div className="pattern-border absolute inset-x-0 top-0 h-2 opacity-80" aria-hidden="true" />
         <div className="container grid items-center gap-8 md:grid-cols-2">
           <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-accent" aria-hidden="true" />
           <div>
