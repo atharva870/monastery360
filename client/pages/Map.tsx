@@ -100,6 +100,34 @@ export default function MapPage() {
         role="application"
         aria-label="Map of monasteries in Sikkim"
       />
+
+      <section className="mt-8 grid gap-4 md:grid-cols-2">
+        <div className="rounded-xl border p-4">
+          <h2 className="font-serif text-xl">Transport & Tourism</h2>
+          <p className="mt-1 text-sm text-foreground/70">Plan travel with official resources:</p>
+          <ul className="mt-2 list-disc pl-5 text-sm">
+            <li>
+              <a className="underline" href="https://utcdemo.uk.gov.in/starbus/Sikkim/Home.aspx" target="_blank" rel="noreferrer">Sikkim Nationalised Transport (SNT) Online Services</a>
+            </li>
+            <li>
+              <a className="underline" href="https://www.redbus.in/online-booking/sikkim-nationalised-transport-snt" target="_blank" rel="noreferrer">SNT tickets on redBus</a>
+            </li>
+            <li>
+              <a className="underline" href="https://sikkimtourism.gov.in/Public/TravellerEssentials/pap" target="_blank" rel="noreferrer">Tourist Permits (PAP/RAP)</a>
+            </li>
+            <li>
+              <a className="underline" href="https://sikkimtourism.gov.in/Public/TravellerEssentials/TravelAgents" target="_blank" rel="noreferrer">Registered Travel Agents</a>
+            </li>
+          </ul>
+        </div>
+        <div className="rounded-xl border p-4">
+          <h2 className="font-serif text-xl">Tips</h2>
+          <ul className="mt-2 list-disc pl-5 text-sm text-foreground/70">
+            <li>Use Get Directions on each marker for driving routes.</li>
+            <li>Network weak? Enable offline mode in Audio Guide and preload the Explore page.</li>
+          </ul>
+        </div>
+      </section>
     </div>
   );
 }
