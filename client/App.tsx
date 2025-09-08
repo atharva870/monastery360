@@ -65,7 +65,7 @@ function Header() {
           </a>
           <a
             href="#mission"
-            className="hidden rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90 md:inline-flex"
+            className="hidden rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90 md:inline-flex glow-cta"
             aria-label="Jump to mission section"
           >
             Our Mission
