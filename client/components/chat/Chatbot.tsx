@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MONASTERIES, type Monastery } from "@/data/monasteries";
-import { BOOKINGS, EVENTS } from "@/data/calendar";
+import { EVENTS } from "@/data/calendar";
+import { KBDOCS, KB_NAMES, GENERAL_KB } from "@/data/kb";
 
 function normalize(s: string) {
   return s.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
@@ -29,19 +30,6 @@ function diceCoefficient(a: string, b: string) {
   return (2 * overlap) / (sizeA + sizeB || 1);
 }
 
-async function wikiSummary(title: string) {
-  try {
-    const safe = encodeURIComponent(title);
-    const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${safe}`);
-    if (!res.ok) return null;
-    const data = await res.json();
-    if (data?.extract) return data.extract as string;
-    return null;
-  } catch {
-    return null;
-  }
-}
-
 type Msg = { role: "user" | "assistant"; content: string };
 
 export default function Chatbot() {
@@ -51,7 +39,7 @@ export default function Chatbot() {
     {
       role: "assistant",
       content:
-        "Hi! I’m your Sikkim Monasteries guide. Ask about any monastery (history, location, directions, nearby), festivals, permits, or transport.",
+        "Hi! I’m your Sikkim Monasteries guide. Ask about any monastery (history, location, nearby), festivals, permits, etiquette, or transport. I answer from a built‑in dataset—no links needed.",
     },
   ]);
   const listRef = useRef<HTMLDivElement | null>(null);
@@ -64,19 +52,21 @@ export default function Chatbot() {
 
   const answer = async (q: string) => {
     const nq = normalize(q);
-    // Quick intents
+    // Quick intents (local text only)
     if (/how many|count|total/.test(nq)) {
-      return `We currently list ${MONASTERIES.length} monasteries across Sikkim. Open Explore to browse or Map to view pins.`;
+      return `We currently list ${MONASTERIES.length} monasteries across Sikkim. Use Explore or Map to browse.`;
     }
     if (/festival|event|calendar/.test(nq)) {
       const items = EVENTS.map((e) => `${e.name} — ${e.when} · ${e.where}`).join("\n• ");
-      return `Key festivals in Sikkim:\n• ${items}\nSee: /calendar`;
+      return `Key festivals in Sikkim:\n• ${items}`;
     }
-    if (/permit|rap|pap|book|agent|accommodation|stay/.test(nq)) {
-      const links = BOOKINGS.map((b) => `${b.label}: ${b.href}`).join("\n• ");
-      return `Travel and permits:\n• ${links}`;
+    if (/permit|rap|pap|book|agent|accommodation|stay|hotel/.test(nq)) {
+      return GENERAL_KB.permits + "\n" + GENERAL_KB.transport;
     }
-    if (/gangtok|near me|nearest/.test(nq)) {
+    if (/etiquette|rules|dress|photography/.test(nq)) {
+      return GENERAL_KB.etiquette;
+    }
+    if (/near|closest|distance|gangtok/.test(nq)) {
       const gangtok = { lat: 27.3314, lon: 88.6138 };
       const withD = MONASTERIES.map((m) => ({ m, d: dist(gangtok, m) }))
         .sort((a, b) => a.d - b.d)
@@ -86,7 +76,7 @@ export default function Chatbot() {
       return `Closest to Gangtok:\n• ${withD}`;
     }
 
-    // Fuzzy find a monastery by name
+    // Fuzzy find a monastery by name (local KB only)
     let best: { m: Monastery; score: number } | null = null;
     for (const m of MONASTERIES) {
       const s = diceCoefficient(normalize(m.name), nq);
@@ -94,20 +84,33 @@ export default function Chatbot() {
     }
     if (best && best.score > 0.2) {
       const m = best.m;
-      let text = `${m.name} — ${m.location}. View on map: /map#${m.lat},${m.lon}.`;
-      if (m.links?.[0]) {
-        text += `\nReference: ${m.links[0].href}`;
-      } else {
-        const w = await wikiSummary(m.name);
-        if (w) text += `\n${w}`;
-      }
-      return text;
+      const kb = KBDOCS[m.name];
+      const bits = [
+        `${m.name} — ${m.location}.`,
+        kb?.summary || "",
+        kb?.founded ? `Founded: ${kb.founded}.` : "",
+        kb?.tradition ? `Tradition: ${kb.tradition}.` : "",
+        kb?.festivals?.length ? `Festivals: ${kb.festivals.join(", ")}.` : "",
+        kb?.highlights?.length ? `Highlights: ${kb.highlights.join(", ")}.` : "",
+        kb?.tips?.length ? `Tips: ${kb.tips.join("; ")}.` : "",
+        `Location on Map tab: ${m.lat.toFixed(4)}, ${m.lon.toFixed(4)}.`,
+      ].filter(Boolean);
+      return bits.join(" \n");
     }
 
-    // Fallback to Wikipedia search using the question as a title
-    const w = await wikiSummary(q);
-    if (w) return w;
-    return "I couldn’t find that yet. Ask about a specific monastery, festival, or permits.";
+    // Try fuzzy intent for any KB name mentioned in free‑form text
+    let secondBest: { name: string; score: number } | null = null;
+    for (const name of KB_NAMES) {
+      const s = diceCoefficient(normalize(name), nq);
+      if (!secondBest || s > secondBest.score) secondBest = { name, score: s };
+    }
+    if (secondBest && secondBest.score > 0.2) {
+      const m = MONASTERIES.find((x) => x.name === secondBest!.name)!;
+      const kb = KBDOCS[m.name];
+      return `${m.name} — ${m.location}. ${kb.summary}`;
+    }
+
+    return "I couldn’t find that yet. Ask about a specific monastery, festival dates, permits or etiquette.";
   };
 
   function dist(a: { lat: number; lon: number }, b: { lat: number; lon: number }) {
