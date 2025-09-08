@@ -12,13 +12,13 @@ const tours = [
     },
   },
   {
-    title: "Rumtek Monastery Walkthrough (Video)",
-    src: "https://www.youtube.com/embed/E1m1dL0cYDo",
-    embed: "youtube",
-    credit: "YouTube",
+    title: "Tibetan Temple Interior 360°",
+    src: "https://www.360cities.net/en/image/interior-tibetan-temple-in-india",
+    embed: "https://www.360cities.net/embed_iframe#pano=interior-tibetan-temple-in-india&view=0.00,0.00,70.0,0.00",
+    credit: "360cities",
     langText: {
-      en: "A walkthrough of Rumtek Monastery near Gangtok, seat of the Karmapa lineage. Use captions for auto-translation.",
-      hi: "गंगटोक के पास रुमटेक मठ का वॉकथ्रू। उपशीर्षक का उपयोग कर अनुवाद देखें।",
+      en: "Rotate inside a richly decorated Tibetan Buddhist temple interior in India—experience the art and ambiance similar to Sikkim’s monasteries.",
+      hi: "भारत में तिब्बती बौद्ध मंदिर के सुसज्जित आंतरिक भाग का 360° अनुभव करें—सिक्किम के मठों जैसी कला और माहौल।",
     },
   },
 ];
