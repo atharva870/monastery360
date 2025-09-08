@@ -16,6 +16,24 @@ export default function Explore() {
             </p>
           </div>
         </div>
+
+        <div className="-mx-4 mb-8 overflow-x-auto px-4">
+          <div className="flex snap-x snap-mandatory gap-4">
+            {items.slice(0, 12).map((m) => (
+              <div key={m.name} className="snap-start shrink-0 w-72 overflow-hidden rounded-xl border bg-card shadow-sm">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img src={m.image} alt={m.name} className="h-full w-full object-cover" loading="lazy" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-black/0" />
+                </div>
+                <div className="p-3">
+                  <p className="font-serif">{m.name}</p>
+                  <p className="text-xs text-foreground/60">{m.location}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((m) => (
             <article key={m.name} className="group overflow-hidden rounded-xl border bg-card shadow-sm">
