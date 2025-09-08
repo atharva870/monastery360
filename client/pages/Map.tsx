@@ -1,49 +1,5 @@
 import { useEffect, useRef } from "react";
-
-const places = [
-  {
-    name: "Rumtek Monastery",
-    lat: 27.3177,
-    lon: 88.619,
-    info: "Seat of the Karmapa lineage near Gangtok.",
-    directions: "https://www.google.com/maps/dir/?api=1&destination=27.3177,88.619",
-    links: [
-      { label: "Wikipedia", href: "https://en.wikipedia.org/wiki/Rumtek_Monastery" },
-      { label: "Nearby: Namgyal Institute of Tibetology", href: "https://namgyalinstitutesikkim.org/" },
-    ],
-  },
-  {
-    name: "Pemayangtse Monastery",
-    lat: 27.3019,
-    lon: 88.2345,
-    info: "17th-century monastery near Pelling with panoramic views.",
-    directions: "https://www.google.com/maps/dir/?api=1&destination=27.3019,88.2345",
-    links: [
-      { label: "Wikipedia", href: "https://en.wikipedia.org/wiki/Pemayangtse_Monastery" },
-      { label: "360° Panorama", href: "https://www.360cities.net/en/image/pemayangste-monastery-in-sikkim" },
-    ],
-  },
-  {
-    name: "Tashiding Monastery",
-    lat: 27.2581,
-    lon: 88.2857,
-    info: "Famous for the annual Bumchu festival.",
-    directions: "https://www.google.com/maps/dir/?api=1&destination=27.2581,88.2857",
-    links: [
-      { label: "Wikipedia", href: "https://en.wikipedia.org/wiki/Tashiding_Monastery" },
-    ],
-  },
-  {
-    name: "Enchey Monastery",
-    lat: 27.3406,
-    lon: 88.6273,
-    info: "Prominent 19th-century monastery in Gangtok.",
-    directions: "https://www.google.com/maps/dir/?api=1&destination=27.3406,88.6273",
-    links: [
-      { label: "Wikipedia", href: "https://en.wikipedia.org/wiki/Enchey_Monastery" },
-    ],
-  },
-];
+import { MONASTERIES } from "@/data/monasteries";
 
 export default function MapPage() {
   const mapRef = useRef<HTMLDivElement | null>(null);
