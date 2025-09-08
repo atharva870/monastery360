@@ -21,7 +21,8 @@ export default function Index() {
             className="h-full w-full object-cover"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-background/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background/95" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 mix-blend-overlay" />
         </div>
         <div className="container flex min-h-[70vh] flex-col items-start justify-end py-24 sm:min-h-[80vh]">
           <h1 className="max-w-3xl font-serif text-4xl text-white sm:text-5xl md:text-6xl">
@@ -33,13 +34,13 @@ export default function Index() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               to="/explore"
-              className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90"
+              className="rounded-full bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition hover:brightness-110"
             >
               Explore Monasteries
             </Link>
             <a
               href="#mission"
-              className="rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur transition hover:bg-white/20"
+              className="rounded-full border border-primary/60 bg-background/20 px-5 py-2.5 text-sm font-medium text-primary-foreground backdrop-blur transition hover:bg-background/40"
             >
               Learn More
             </a>
@@ -57,7 +58,7 @@ export default function Index() {
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[IMAGES.hero, IMAGES.a, IMAGES.b].map((src, i) => (
-            <article key={src} className="group overflow-hidden rounded-xl border bg-card shadow-sm">
+            <article key={src} className="group overflow-hidden rounded-xl border bg-card shadow-sm transition hover:ring-2 hover:ring-accent/30">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={src}
@@ -77,8 +78,9 @@ export default function Index() {
       </section>
 
       {/* Mission */}
-      <section id="mission" className="border-y bg-secondary/40 py-16 md:py-20">
+      <section id="mission" className="relative border-y bg-secondary py-16 md:py-20">
         <div className="container grid items-center gap-8 md:grid-cols-2">
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-accent" aria-hidden="true" />
           <div>
             <h2 className="font-serif text-3xl md:text-4xl">Preservation Through Digitization</h2>
             <p className="mt-4 max-w-prose text-foreground/70">
@@ -87,7 +89,7 @@ export default function Index() {
             <p className="mt-3 max-w-prose text-foreground/70">
               The archive is openly accessible and designed for mobile first, enabling travelers and researchers to explore with ease.
             </p>
-            <div className="mt-6 inline-flex items-center gap-4 rounded-xl border p-4">
+            <div className="mt-6 inline-flex items-center gap-4 rounded-xl border p-4 shadow-sm">
               <div className="text-3xl font-semibold">100+</div>
               <div className="text-sm text-foreground/60">Sites, artefacts, and oral accounts digitized (expanding)</div>
             </div>
