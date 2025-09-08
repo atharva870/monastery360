@@ -115,6 +115,21 @@ if ("serviceWorker" in navigator) {
   });
 }
 
+function PageTransition({ children }: { children: React.ReactNode }) {
+  const shouldReduce = useReducedMotion();
+  return (
+    <motion.div
+      key={useLocation().pathname}
+      initial={{ opacity: 0, y: shouldReduce ? 0 : 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: shouldReduce ? 0 : -8 }}
+      transition={{ duration: shouldReduce ? 0 : 0.25, ease: "easeOut" }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -124,17 +139,21 @@ const App = () => (
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1 pt-16">
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/explore" element={<Explore />} />
-              <Route path="/tours" element={<Tours />} />
-              <Route path="/map" element={<MapPage />} />
-              <Route path="/archives" element={<Archives />} />
-              <Route path="/guide" element={<Guide />} />
-              <Route path="/calendar" element={<Calendar />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <AnimatePresence mode="wait">
+              <PageTransition>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/explore" element={<Explore />} />
+                  <Route path="/tours" element={<Tours />} />
+                  <Route path="/map" element={<MapPage />} />
+                  <Route path="/archives" element={<Archives />} />
+                  <Route path="/guide" element={<Guide />} />
+                  <Route path="/calendar" element={<Calendar />} />
+                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </PageTransition>
+            </AnimatePresence>
           </main>
           <Footer />
           <Chatbot />
