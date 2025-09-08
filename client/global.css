@@ -5,6 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Pattern utilities and subtle effects */
+.pattern-jaali { background-image: url('/patterns/jaali.svg'); background-size: 24px 24px; background-repeat: repeat; opacity: 0.15; }
+.pattern-border { background-image: url('/patterns/border-motif.svg'); background-size: auto 8px; background-repeat: repeat-x; }
+
+@keyframes float-soft { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+@keyframes glow-pulse { 0%,100% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0.0); } 50% { box-shadow: 0 0 0 8px hsl(var(--accent) / 0.08);} }
+
 @layer base {
   /**
    * Tailwind CSS theme
@@ -114,6 +121,9 @@
   a, button, input, select, textarea {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
+
+  .hover-float:hover { transform: translateY(-2px); }
+  .glow-cta { animation: glow-pulse 2.5s ease-in-out infinite; }
 
   ::selection {
     background: hsl(var(--primary));
