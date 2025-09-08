@@ -96,7 +96,7 @@ export default function Tours() {
                   src={t.embed}
                   title={t.title}
                   className="h-full w-full"
-                  allow="fullscreen; vr"
+                  allow="accelerometer; gyroscope; xr-spatial-tracking; fullscreen; vr"
                   allowFullScreen
                 />
               )}
@@ -106,13 +106,24 @@ export default function Tours() {
                 <h2 className="font-serif text-xl">{t.title}</h2>
                 <p className="text-sm text-foreground/60">Source: {t.credit}</p>
               </div>
-              <button
-                className="rounded-full bg-primary px-4 py-2 text-sm text-primary-foreground"
-                onClick={() => speak(t.langText[lang])}
-                aria-label={`Play narration for ${t.title}`}
-              >
-                Play narration
-              </button>
+              <div className="flex items-center gap-2">
+                <a
+                  href={t.src}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border px-4 py-2 text-sm"
+                  aria-label={`Open ${t.title} in a new tab`}
+                >
+                  Open 360°
+                </a>
+                <button
+                  className="rounded-full bg-primary px-4 py-2 text-sm text-primary-foreground"
+                  onClick={() => speak(t.langText[lang])}
+                  aria-label={`Play narration for ${t.title}`}
+                >
+                  Play narration
+                </button>
+              </div>
             </div>
           </section>
         ))}
