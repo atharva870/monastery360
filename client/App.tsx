@@ -71,6 +71,7 @@ function Header() {
             Our Mission
           </a>
         </div>
+        <div className="pointer-events-none pattern-border absolute inset-x-0 bottom-0 h-2 opacity-80" aria-hidden="true" />
       </div>
     </header>
   );
