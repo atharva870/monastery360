@@ -1,4 +1,5 @@
 import { BOOKINGS, EVENTS } from "@/data/calendar";
+import YearCalendar from "@/components/calendar/YearCalendar";
 
 export default function Calendar() {
   return (
