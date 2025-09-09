@@ -12,7 +12,7 @@ import { MONASTERIES } from "@/data/monasteries";
 import { motion } from "framer-motion";
 
 const IMAGES = {
-  hero: "https://cdn.builder.io/api/v1/image/assets%2Fb9a7106ecdaa444b8efc312ae06c585e%2F70aabd3d368942a3a98d8fc6f3a6f14d?format=webp&width=800",
+  hero: "https://cdn.builder.io/api/v1/image/assets%2Fb9a7106ecdaa444b8efc312ae06c585e%2F70aabd3d368942a3a98d8fc6f3a6f14d?format=webp&width=1600",
   a: "https://images.pexels.com/photos/2408167/pexels-photo-2408167.jpeg?auto=compress&cs=tinysrgb&w=1200",
   b: "https://images.pexels.com/photos/5204433/pexels-photo-5204433.jpeg?auto=compress&cs=tinysrgb&w=1200",
   c: "https://cdn.builder.io/api/v1/image/assets%2Fb9a7106ecdaa444b8efc312ae06c585e%2F49ed2424ee7c4ca7a613ecc2cec3b311?format=webp&width=800",
@@ -32,10 +32,11 @@ export default function Index() {
             className="h-full w-full object-cover will-change-transform"
             loading="eager"
             ref={heroRef}
+            style={{ objectPosition: "center 75%" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background/95" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 mix-blend-overlay bg-pan-slow" />
-          <div className="pattern-jaali absolute inset-0" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 mix-blend-overlay bg-pan-slow" />
+          <div className="pattern-jaali absolute inset-0 opacity-20" aria-hidden="true" />
         </div>
         <div className="container flex min-h-[70vh] flex-col items-start justify-end py-24 sm:min-h-[80vh]">
           <motion.h1
