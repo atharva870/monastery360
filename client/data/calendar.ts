@@ -1,4 +1,15 @@
-export const EVENTS = [
+export type Event = {
+  name: string;
+  when: string;
+  where: string;
+  source: string;
+  lat?: number;
+  lon?: number;
+  months?: number[];
+  dates?: string[];
+};
+
+export const EVENTS: Event[] = [
   {
     name: "Pang Lhabsol",
     when: "Aug–Sep (lunar calendar)",
