@@ -51,6 +51,10 @@ export default function MapPage() {
         m.bindPopup(
           `<strong>${p.name}</strong><br/>${p.location}<br/><a href="${directions}" target="_blank" rel="noreferrer">Get Directions</a>${wiki ? `<br/>${wiki}` : ""}`,
         );
+        m.bindTooltip(
+          `<div><strong>${p.name}</strong><br/><span class="label-sub">${p.location}</span></div>`,
+          { permanent: true, direction: "top", offset: [0, -10], className: "map-label" },
+        );
         markers.push({ m, p });
       });
 
