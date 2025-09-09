@@ -41,7 +41,7 @@ function Header() {
             <span className="h-2 w-2 rounded-full bg-primary-foreground/90" />
           </span>
           <span className="font-serif text-xl tracking-tight text-primary-foreground group-hover:opacity-90">
-            Monasteries of Sikkim
+            Monastery 360
           </span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex text-primary-foreground">
@@ -166,7 +166,7 @@ function Footer() {
             Follow on Instagram
           </a>
           <p className="text-sm text-foreground/60">
-            © {new Date().getFullYear()} Monasteries of Sikkim
+            © {new Date().getFullYear()} Monastery 360
           </p>
         </div>
       </div>
