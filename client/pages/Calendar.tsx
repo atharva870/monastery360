@@ -11,24 +11,20 @@ export default function Calendar() {
         </p>
       </header>
 
-      <ul className="grid gap-4 sm:grid-cols-2">
-        {EVENTS.map((e) => (
-          <li key={e.name} className="rounded-xl border p-4">
-            <h2 className="font-serif text-xl">{e.name}</h2>
-            <p className="text-sm text-foreground/70">
-              {e.when} · {e.where}
-            </p>
-            <a
-              className="mt-2 inline-block text-sm underline"
-              href={e.source}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Source
-            </a>
-          </li>
-        ))}
-      </ul>
+      <YearCalendar events={EVENTS} />
+
+      <section className="mt-10">
+        <h2 className="font-serif text-2xl">Festival Details</h2>
+        <ul className="mt-3 grid gap-4 sm:grid-cols-2">
+          {EVENTS.map((e) => (
+            <li key={e.name} className="rounded-xl border p-4">
+              <h3 className="font-serif text-xl">{e.name}</h3>
+              <p className="text-sm text-foreground/70">{e.when} · {e.where}</p>
+              <a className="mt-2 inline-block text-sm underline" href={e.source} target="_blank" rel="noreferrer">Source</a>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <section className="mt-10">
         <h2 className="font-serif text-2xl">Plan & Book</h2>
