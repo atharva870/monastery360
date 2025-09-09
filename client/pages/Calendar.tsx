@@ -7,8 +7,7 @@ export default function Calendar() {
       <header className="mb-6">
         <h1 className="font-serif text-3xl md:text-4xl">Cultural Calendar</h1>
         <p className="mt-2 max-w-prose text-foreground/70">
-          Major monastic festivals and rituals in Sikkim with authoritative
-          sources.
+          A full 365‑day view with monastic festivals pinned. Lunar festivals are shown in their months; exact dates vary annually.
         </p>
       </header>
 
