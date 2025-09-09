@@ -11,8 +11,8 @@ const img = {
   rumtek: "https://commons.wikimedia.org/wiki/Special:FilePath/Rumtek_Monastery_NEW.jpg?width=1200",
   pemayangtse: "https://commons.wikimedia.org/wiki/Special:FilePath/The_pemayangtse_monastery_-_west_sikkim.jpg?width=1200",
   tashiding: "https://commons.wikimedia.org/wiki/Special:FilePath/Tashiding_Monastery.jpg?width=1200",
-  enchey: "https://commons.wikimedia.org/wiki/Special:FilePath/Enchey Monastery in Gangtok district, East Sikkim 17.jpg?width=1200",
-  ralang: "https://commons.wikimedia.org/wiki/Special:FilePath/Ralang_Monastery, Sikkim, India.jpg?width=1200",
+  enchey: "https://commons.wikimedia.org/wiki/Special:FilePath/Enchey%20Monastery%20in%20Gangtok%20district,%20East%20Sikkim%2017.jpg?width=1200",
+  ralang: "https://commons.wikimedia.org/wiki/Special:FilePath/Ralang_Monastery,%20Sikkim,%20India.jpg?width=1200",
   phodong: "https://commons.wikimedia.org/wiki/Special:FilePath/Phodong_monastery_-_north_sikkim.jpg?width=1200",
   phensang: "https://commons.wikimedia.org/wiki/Special:FilePath/Phensong_Monastery.jpg?width=1200",
   dubdi: "https://commons.wikimedia.org/wiki/Special:FilePath/The_dubdi_monastery.jpg?width=1200",
@@ -20,8 +20,8 @@ const img = {
   tsuklakhang: "https://commons.wikimedia.org/wiki/Special:FilePath/Tsuklakhang_Monastery.jpg?width=1200",
   ranka: "https://commons.wikimedia.org/wiki/Special:FilePath/Ranka_Monastry.jpg?width=1200",
   lachen: "https://commons.wikimedia.org/wiki/Special:FilePath/Lachen_Monastery_Gompa.jpg?width=1200",
-  lachung: "https://commons.wikimedia.org/wiki/Special:FilePath/Lachung Monastery, Sikkim India.jpg?width=1200",
-  ngadak: "https://commons.wikimedia.org/wiki/Special:FilePath/Ngadak_Thupten_Shedup_Dhargey_Choeling_Monastery, Namchi, district_of_South_Sikkim_01.jpg?width=1200",
+  lachung: "https://commons.wikimedia.org/wiki/Special:FilePath/Lachung%20Monastery,%20Sikkim%20India.jpg?width=1200",
+  ngadak: "https://commons.wikimedia.org/wiki/Special:FilePath/Ngadak_Thupten_Shedup_Dhargey_Choeling_Monastery,%20Namchi,%20district_of_South_Sikkim_01.jpg?width=1200",
   kartok: "https://commons.wikimedia.org/wiki/Special:FilePath/Kartok_gumpa_-_yuksam.jpg?width=1200",
 };
 
