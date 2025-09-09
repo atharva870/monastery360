@@ -8,11 +8,21 @@ export type Monastery = {
 };
 
 const img = {
-  arch: "https://images.pexels.com/photos/30719637/pexels-photo-30719637.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  interior:
-    "https://images.pexels.com/photos/2408167/pexels-photo-2408167.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  stupas:
-    "https://images.pexels.com/photos/5204433/pexels-photo-5204433.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  rumtek: "https://commons.wikimedia.org/wiki/Special:FilePath/Rumtek_Monastery_NEW.jpg?width=1200",
+  pemayangtse: "https://commons.wikimedia.org/wiki/Special:FilePath/The_pemayangtse_monastery_-_west_sikkim.jpg?width=1200",
+  tashiding: "https://commons.wikimedia.org/wiki/Special:FilePath/Tashiding_Monastery.jpg?width=1200",
+  enchey: "https://commons.wikimedia.org/wiki/Special:FilePath/Enchey Monastery in Gangtok district, East Sikkim 17.jpg?width=1200",
+  ralang: "https://commons.wikimedia.org/wiki/Special:FilePath/Ralang_Monastery, Sikkim, India.jpg?width=1200",
+  phodong: "https://commons.wikimedia.org/wiki/Special:FilePath/Phodong_monastery_-_north_sikkim.jpg?width=1200",
+  phensang: "https://commons.wikimedia.org/wiki/Special:FilePath/Phensong_Monastery.jpg?width=1200",
+  dubdi: "https://commons.wikimedia.org/wiki/Special:FilePath/The_dubdi_monastery.jpg?width=1200",
+  sangaChoeling: "https://commons.wikimedia.org/wiki/Special:FilePath/Entrance_to_Sanga-Choeling_Monastery.jpg?width=1200",
+  tsuklakhang: "https://commons.wikimedia.org/wiki/Special:FilePath/Tsuklakhang_Monastery.jpg?width=1200",
+  ranka: "https://commons.wikimedia.org/wiki/Special:FilePath/Ranka_Monastry.jpg?width=1200",
+  lachen: "https://commons.wikimedia.org/wiki/Special:FilePath/Lachen_Monastery_Gompa.jpg?width=1200",
+  lachung: "https://commons.wikimedia.org/wiki/Special:FilePath/Lachung Monastery, Sikkim India.jpg?width=1200",
+  ngadak: "https://commons.wikimedia.org/wiki/Special:FilePath/Ngadak_Thupten_Shedup_Dhargey_Choeling_Monastery, Namchi, district_of_South_Sikkim_01.jpg?width=1200",
+  kartok: "https://commons.wikimedia.org/wiki/Special:FilePath/Kartok_gumpa_-_yuksam.jpg?width=1200",
 };
 
 export const MONASTERIES: Monastery[] = [
@@ -21,7 +31,7 @@ export const MONASTERIES: Monastery[] = [
     location: "Rumtek, East Sikkim",
     lat: 27.3177,
     lon: 88.619,
-    image: img.arch,
+    image: img.rumtek,
     links: [
       {
         label: "Wikipedia",
@@ -34,7 +44,7 @@ export const MONASTERIES: Monastery[] = [
     location: "Pelling, West Sikkim",
     lat: 27.3019,
     lon: 88.2345,
-    image: img.interior,
+    image: img.pemayangtse,
     links: [
       {
         label: "Wikipedia",
@@ -47,7 +57,7 @@ export const MONASTERIES: Monastery[] = [
     location: "Tashiding, West Sikkim",
     lat: 27.2581,
     lon: 88.2857,
-    image: img.stupas,
+    image: img.tashiding,
     links: [
       {
         label: "Wikipedia",
@@ -60,7 +70,7 @@ export const MONASTERIES: Monastery[] = [
     location: "Gangtok, East Sikkim",
     lat: 27.3406,
     lon: 88.6273,
-    image: img.arch,
+    image: img.enchey,
     links: [
       {
         label: "Wikipedia",
@@ -70,10 +80,10 @@ export const MONASTERIES: Monastery[] = [
   },
   {
     name: "Ralang (Palchen Choeling)",
-    location: "Ralang, South Sikkim",
+    location: "Ralong, South Sikkim",
     lat: 27.1835,
     lon: 88.365,
-    image: img.interior,
+    image: img.ralang,
     links: [
       {
         label: "Wikipedia",
@@ -93,7 +103,7 @@ export const MONASTERIES: Monastery[] = [
     location: "North Sikkim",
     lat: 27.4334,
     lon: 88.5864,
-    image: img.arch,
+    image: img.phodong,
     links: [
       {
         label: "Wikipedia",
@@ -106,7 +116,7 @@ export const MONASTERIES: Monastery[] = [
     location: "North Sikkim",
     lat: 27.4119,
     lon: 88.5736,
-    image: img.stupas,
+    image: img.phensang,
     links: [
       {
         label: "Wikipedia",
@@ -126,7 +136,7 @@ export const MONASTERIES: Monastery[] = [
     location: "Yuksom, West Sikkim",
     lat: 27.3782,
     lon: 88.2572,
-    image: img.arch,
+    image: img.dubdi,
     links: [
       {
         label: "Wikipedia",
@@ -139,7 +149,7 @@ export const MONASTERIES: Monastery[] = [
     location: "Near Pelling, West Sikkim",
     lat: 27.3014,
     lon: 88.2368,
-    image: img.stupas,
+    image: img.sangaChoeling,
     links: [
       {
         label: "Wikipedia",
@@ -165,14 +175,14 @@ export const MONASTERIES: Monastery[] = [
     location: "Lachen, North Sikkim",
     lat: 27.7168,
     lon: 88.557,
-    image: img.interior,
+    image: img.lachen,
   },
   {
     name: "Lachung Monastery",
     location: "Lachung, North Sikkim",
     lat: 27.6886,
     lon: 88.7416,
-    image: img.arch,
+    image: img.lachung,
   },
   {
     name: "Rinchenpong Monastery",
@@ -193,7 +203,7 @@ export const MONASTERIES: Monastery[] = [
     location: "Gangtok, East Sikkim",
     lat: 27.3314,
     lon: 88.614,
-    image: img.interior,
+    image: img.tsuklakhang,
     links: [
       {
         label: "Wikipedia",
@@ -206,7 +216,7 @@ export const MONASTERIES: Monastery[] = [
     location: "Ranka, East Sikkim",
     lat: 27.313,
     lon: 88.673,
-    image: img.arch,
+    image: img.ranka,
     links: [
       {
         label: "Wikipedia",
@@ -219,14 +229,14 @@ export const MONASTERIES: Monastery[] = [
     location: "Namchi, South Sikkim",
     lat: 27.1609,
     lon: 88.3639,
-    image: img.arch,
+    image: img.ngadak,
   },
   {
     name: "Kartok Monastery",
     location: "Yuksom, West Sikkim",
     lat: 27.3002,
     lon: 88.2612,
-    image: img.stupas,
+    image: img.kartok,
   },
   {
     name: "Gonjang Monastery",
