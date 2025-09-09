@@ -18,6 +18,7 @@ export const EVENTS: Event[] = [
     lon: 88.614,
     source:
       "https://sikkimtourism.gov.in/Public/ExperienceSikkim/FairsAndFestivalDetails/FF20A071?type=Festival%2F1000",
+    months: [7, 8],
   },
   {
     name: "Bumchu Festival",
@@ -26,6 +27,7 @@ export const EVENTS: Event[] = [
     lat: 27.2581,
     lon: 88.2857,
     source: "https://en.wikipedia.org/wiki/Tashiding_Monastery",
+    months: [1, 2],
   },
   {
     name: "Saga Dawa",
@@ -34,6 +36,7 @@ export const EVENTS: Event[] = [
     lat: 27.3314,
     lon: 88.614,
     source: "https://en.wikipedia.org/wiki/Saga_Dawa",
+    months: [4, 5],
   },
   {
     name: "Losoong / Namsoong (Sikkimese New Year)",
@@ -42,6 +45,7 @@ export const EVENTS: Event[] = [
     lat: 27.4334,
     lon: 88.5864,
     source: "https://en.wikipedia.org/wiki/Losoong_Festival",
+    months: [11],
   },
 ];
 
