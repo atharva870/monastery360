@@ -12,7 +12,7 @@ import { MONASTERIES } from "@/data/monasteries";
 import { motion } from "framer-motion";
 
 const IMAGES = {
-  hero: "https://images.pexels.com/photos/30719637/pexels-photo-30719637.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  hero: "https://cdn.builder.io/api/v1/image/assets%2Fb9a7106ecdaa444b8efc312ae06c585e%2F70aabd3d368942a3a98d8fc6f3a6f14d?format=webp&width=800",
   a: "https://images.pexels.com/photos/2408167/pexels-photo-2408167.jpeg?auto=compress&cs=tinysrgb&w=1200",
   b: "https://images.pexels.com/photos/5204433/pexels-photo-5204433.jpeg?auto=compress&cs=tinysrgb&w=1200",
 };
