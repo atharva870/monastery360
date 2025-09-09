@@ -103,6 +103,7 @@ function Header() {
           </NavLink>
         </nav>
         <div className="flex items-center gap-2 text-primary-foreground">
+          <WeatherWidget />
           <a
             href="https://www.instagram.com/monastery360/"
             target="_blank"
@@ -197,6 +198,7 @@ const App = () => (
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1 pt-16">
+            <WarningBanner />
             <AnimatePresence mode="wait">
               <PageTransition>
                 <Routes>
