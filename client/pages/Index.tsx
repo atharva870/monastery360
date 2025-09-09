@@ -15,6 +15,7 @@ const IMAGES = {
   hero: "https://cdn.builder.io/api/v1/image/assets%2Fb9a7106ecdaa444b8efc312ae06c585e%2F70aabd3d368942a3a98d8fc6f3a6f14d?format=webp&width=800",
   a: "https://images.pexels.com/photos/2408167/pexels-photo-2408167.jpeg?auto=compress&cs=tinysrgb&w=1200",
   b: "https://images.pexels.com/photos/5204433/pexels-photo-5204433.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  c: "https://cdn.builder.io/api/v1/image/assets%2Fb9a7106ecdaa444b8efc312ae06c585e%2F49ed2424ee7c4ca7a613ecc2cec3b311?format=webp&width=800",
 };
 
 export default function Index() {
@@ -93,7 +94,7 @@ export default function Index() {
           </Link>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[IMAGES.hero, IMAGES.a, IMAGES.b].map((src, i) => (
+          {[IMAGES.hero, IMAGES.a, IMAGES.b, IMAGES.c].map((src, i) => (
             <article
               key={src}
               className="group overflow-hidden rounded-xl border bg-card shadow-sm transition hover:ring-2 hover:ring-accent/30 hover-float"
@@ -106,7 +107,9 @@ export default function Index() {
                       ? "Monastic architecture in Gangtok, Sikkim"
                       : i === 1
                         ? "Buddhist temple interior with vibrant art"
-                        : "Ancient stupas in the mountains"
+                        : i === 2
+                          ? "Ancient stupas in the mountains"
+                          : "Young monks seated at a monastery in Sikkim (square crop)"
                   }
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
                   loading="lazy"
@@ -119,10 +122,12 @@ export default function Index() {
                     ? "Gangtok Monastic Detail"
                     : i === 1
                       ? "Temple Interior"
-                      : "Mountain Stupas"}
+                      : i === 2
+                        ? "Mountain Stupas"
+                        : "Novice Monks"}
                 </h3>
                 <p className="text-sm text-foreground/60">
-                  {i === 0 ? "Gangtok, Sikkim" : "Himalayan Region"}
+                  {i === 0 ? "Gangtok, Sikkim" : i === 3 ? "Sikkim" : "Himalayan Region"}
                 </p>
               </div>
             </article>
