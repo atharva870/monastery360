@@ -56,7 +56,7 @@ export default function Index() {
             transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
           >
             A minimal, elegant archive celebrating sacred Himalayan
-            heritage—built for travelers, researchers, and future generations.
+            heritage built for travelers, researchers, and future generations.
           </motion.p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
