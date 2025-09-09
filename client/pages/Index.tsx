@@ -27,7 +27,7 @@ export default function Index() {
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <img
             src={IMAGES.hero}
-            alt="Colorful monastic architecture detail in Gangtok, Sikkim"
+            alt="Young monks seated at a monastery in Sikkim"
             className="h-full w-full object-cover will-change-transform"
             loading="eager"
             ref={heroRef}
