@@ -20,6 +20,7 @@ import MapPage from "./pages/Map";
 import Archives from "./pages/Archives";
 import Guide from "./pages/Guide";
 import Calendar from "./pages/Calendar";
+import Plan from "./pages/Plan";
 import { Instagram } from "lucide-react";
 import WeatherWidget from "./components/WeatherWidget";
 import WarningBanner from "./components/alerts/WarningBanner";
@@ -100,6 +101,14 @@ function Header() {
             }
           >
             Calendar
+          </NavLink>
+          <NavLink
+            to="/plan"
+            className={({ isActive }) =>
+              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+            }
+          >
+            Plan
           </NavLink>
         </nav>
         <div className="flex items-center gap-2 text-primary-foreground">
@@ -209,6 +218,7 @@ const App = () => (
                   <Route path="/archives" element={<Archives />} />
                   <Route path="/guide" element={<Guide />} />
                   <Route path="/calendar" element={<Calendar />} />
+                  <Route path="/plan" element={<Plan />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
