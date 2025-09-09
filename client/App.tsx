@@ -21,6 +21,8 @@ import Archives from "./pages/Archives";
 import Guide from "./pages/Guide";
 import Calendar from "./pages/Calendar";
 import { Instagram } from "lucide-react";
+import WeatherWidget from "./components/WeatherWidget";
+import WarningBanner from "./components/alerts/WarningBanner";
 import Chatbot from "./components/chat/Chatbot";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
