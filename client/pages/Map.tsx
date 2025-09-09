@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { MONASTERIES } from "@/data/monasteries";
+import { EVENTS } from "@/data/calendar";
 
 export default function MapPage() {
   const mapRef = useRef<HTMLDivElement | null>(null);
@@ -51,6 +52,16 @@ export default function MapPage() {
           `<strong>${p.name}</strong><br/>${p.location}<br/><a href="${directions}" target="_blank" rel="noreferrer">Get Directions</a>${wiki ? `<br/>${wiki}` : ""}`,
         );
         markers.push({ m, p });
+      });
+
+      // Festivals layer
+      (EVENTS || []).filter((e) => typeof (e as any).lat === "number" && typeof (e as any).lon === "number").forEach((e) => {
+        const lat = (e as any).lat as number;
+        const lon = (e as any).lon as number;
+        const c = L.circleMarker([lat, lon], { radius: 8, color: "#a21caf", fillColor: "#a21caf", fillOpacity: 0.85 });
+        c.addTo(map);
+        const directions = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`;
+        c.bindPopup(`<strong>Festival: ${e.name}</strong><br/>${e.when} · ${e.where}<br/><a href="${e.source}" target="_blank" rel="noreferrer">Source</a><br/><a href="${directions}" target="_blank" rel="noreferrer">Get Directions</a>`);
       });
 
       const hash = window.location.hash.replace("#", "");
