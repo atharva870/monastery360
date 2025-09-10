@@ -61,13 +61,13 @@ export default function Index() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               to="/explore"
-              className="rounded-full bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition hover:brightness-110"
+              className="btn btn-primary"
             >
               Explore Monasteries
             </Link>
             <a
               href="#mission"
-              className="rounded-full border border-primary/60 bg-background/20 px-5 py-2.5 text-sm font-medium text-primary-foreground backdrop-blur transition hover:bg-background/40"
+              className="btn btn-outline"
             >
               Learn More
             </a>
@@ -98,7 +98,7 @@ export default function Index() {
           {[IMAGES.hero, IMAGES.a, IMAGES.b, IMAGES.c].map((src, i) => (
             <article
               key={src}
-              className="group overflow-hidden rounded-xl border bg-card shadow-sm transition hover:shadow-lg hover:ring-1 hover:ring-accent/30 hover-float"
+              className="ui-card group hover-float"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
@@ -150,7 +150,7 @@ export default function Index() {
           <CarouselContent>
             {MONASTERIES.slice(0, 10).map((m) => (
               <CarouselItem key={m.name} className="md:basis-1/2 lg:basis-1/3">
-                <div className="overflow-hidden rounded-xl border bg-card shadow-sm transition hover:shadow-lg hover-float">
+                <div className="ui-card hover-float">
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
                       src={m.image}
