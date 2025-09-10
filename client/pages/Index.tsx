@@ -203,6 +203,9 @@ export default function Index() {
               The archive is openly accessible and designed for mobile first,
               enabling travelers and researchers to explore with ease.
             </p>
+            <p className="mt-3 max-w-prose text-foreground/70">
+              Our mission is to protect the ancient monasteries of Sikkim, the irreplaceable custodians of its unique Vajrayana Buddhist heritage. These sacred structures, housing priceless artifacts and centuries of tradition, face threats from time, climate, and seismic activity. We are committed to their holistic preservation through careful structural restoration using traditional methods, digital archiving of sacred texts and art, and supporting the monastic communities in their stewardship. By uniting conservation experts, local monks, and global supporters, we work to ensure these active centers of faith and culture are not lost. Our goal is to safeguard these serene sanctuaries so they may continue as thriving spiritual beacons for generations to come.
+            </p>
             <div className="mt-6 inline-flex items-center gap-4 rounded-xl border p-4 shadow-sm">
               <div className="text-3xl font-semibold">100+</div>
               <div className="text-sm text-foreground/60">
