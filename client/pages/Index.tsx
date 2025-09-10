@@ -98,7 +98,7 @@ export default function Index() {
           {[IMAGES.hero, IMAGES.a, IMAGES.b, IMAGES.c].map((src, i) => (
             <article
               key={src}
-              className="group overflow-hidden rounded-xl border bg-card shadow-sm transition hover:ring-2 hover:ring-accent/30 hover-float"
+              className="group overflow-hidden rounded-xl border bg-card shadow-sm transition hover:shadow-lg hover:ring-1 hover:ring-accent/30 hover-float"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
@@ -150,7 +150,7 @@ export default function Index() {
           <CarouselContent>
             {MONASTERIES.slice(0, 10).map((m) => (
               <CarouselItem key={m.name} className="md:basis-1/2 lg:basis-1/3">
-                <div className="overflow-hidden rounded-xl border bg-card shadow-sm hover-float">
+                <div className="overflow-hidden rounded-xl border bg-card shadow-sm transition hover:shadow-lg hover-float">
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
                       src={m.image}
