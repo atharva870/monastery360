@@ -29,9 +29,18 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 const queryClient = new QueryClient();
 
+import { useEffect, useState } from "react";
+
 function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-accent/30 bg-gradient-to-r from-primary/95 to-accent/90 text-primary-foreground">
+    <header className={`fixed inset-x-0 top-0 z-50 border-b border-accent/30 text-primary-foreground transition-all ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-black/35 shadow-lg" : "bg-gradient-to-r from-primary/95 to-accent/90"}`}>
       <div className="container flex h-16 items-center justify-between">
         <Link
           to="/"
@@ -48,7 +57,7 @@ function Header() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+              `border-b-2 ${isActive ? "border-white opacity-100" : "border-transparent opacity-80 hover:opacity-100 hover:border-white/60"} py-2 text-[15px] font-medium transition-colors`
             }
             end
           >
@@ -57,7 +66,7 @@ function Header() {
           <NavLink
             to="/explore"
             className={({ isActive }) =>
-              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+              `border-b-2 ${isActive ? "border-white opacity-100" : "border-transparent opacity-80 hover:opacity-100 hover:border-white/60"} py-2 text-[15px] font-medium transition-colors`
             }
           >
             Explore
@@ -65,7 +74,7 @@ function Header() {
           <NavLink
             to="/tours"
             className={({ isActive }) =>
-              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+              `border-b-2 ${isActive ? "border-white opacity-100" : "border-transparent opacity-80 hover:opacity-100 hover:border-white/60"} py-2 text-[15px] font-medium transition-colors`
             }
           >
             Tours
@@ -73,7 +82,7 @@ function Header() {
           <NavLink
             to="/map"
             className={({ isActive }) =>
-              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+              `border-b-2 ${isActive ? "border-white opacity-100" : "border-transparent opacity-80 hover:opacity-100 hover:border-white/60"} py-2 text-[15px] font-medium transition-colors`
             }
           >
             Map
@@ -81,7 +90,7 @@ function Header() {
           <NavLink
             to="/archives"
             className={({ isActive }) =>
-              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+              `border-b-2 ${isActive ? "border-white opacity-100" : "border-transparent opacity-80 hover:opacity-100 hover:border-white/60"} py-2 text-[15px] font-medium transition-colors`
             }
           >
             Archives
@@ -89,7 +98,7 @@ function Header() {
           <NavLink
             to="/guide"
             className={({ isActive }) =>
-              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+              `border-b-2 ${isActive ? "border-white opacity-100" : "border-transparent opacity-80 hover:opacity-100 hover:border-white/60"} py-2 text-[15px] font-medium transition-colors`
             }
           >
             Audio Guide
@@ -97,7 +106,7 @@ function Header() {
           <NavLink
             to="/calendar"
             className={({ isActive }) =>
-              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+              `border-b-2 ${isActive ? "border-white opacity-100" : "border-transparent opacity-80 hover:opacity-100 hover:border-white/60"} py-2 text-[15px] font-medium transition-colors`
             }
           >
             Calendar
@@ -105,7 +114,7 @@ function Header() {
           <NavLink
             to="/plan"
             className={({ isActive }) =>
-              `py-2 text-[15px] font-medium transition-colors ${isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}`
+              `border-b-2 ${isActive ? "border-white opacity-100" : "border-transparent opacity-80 hover:opacity-100 hover:border-white/60"} py-2 text-[15px] font-medium transition-colors`
             }
           >
             Plan
