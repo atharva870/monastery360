@@ -23,7 +23,7 @@ export default function Explore() {
             {items.slice(0, 12).map((m) => (
               <div
                 key={m.name}
-                className="snap-start shrink-0 w-72 overflow-hidden rounded-xl border bg-card shadow-sm"
+                className="snap-start shrink-0 w-72 ui-card"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
@@ -47,7 +47,7 @@ export default function Explore() {
           {items.map((m) => (
             <article
               key={m.name}
-              className="group overflow-hidden rounded-xl border bg-card shadow-sm"
+              className="ui-card group"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
@@ -64,7 +64,7 @@ export default function Explore() {
                 <div className="mt-3 flex items-center gap-2">
                   <Link
                     to={`/map#${m.lat},${m.lon}`}
-                    className="rounded-full border px-3 py-1 text-sm"
+                    className="btn btn-outline btn-sm"
                   >
                     View on Map
                   </Link>
@@ -73,7 +73,7 @@ export default function Explore() {
                       href={m.links[0].href}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-full border px-3 py-1 text-sm"
+                      className="btn btn-outline btn-sm"
                     >
                       Reference
                     </a>
