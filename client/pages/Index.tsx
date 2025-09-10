@@ -217,19 +217,19 @@ export default function Index() {
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fb9a7106ecdaa444b8efc312ae06c585e%2F0a8d64d293924739b2c4625dd6bfcc13?format=webp&width=800"
               alt="Monastery courtyard with monks playing"
-              className="aspect-[4/3] w-full rounded-lg object-cover"
+              className="aspect-[16/9] w-full rounded-xl object-cover shadow-md sm:col-span-2"
               loading="lazy"
             />
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fb9a7106ecdaa444b8efc312ae06c585e%2F224dca7a0f084a929dd9fc9eb717b773?format=webp&width=800"
               alt="Young monk in playful stance at monastery"
-              className="aspect-[4/3] w-full rounded-lg object-cover"
+              className="aspect-[5/4] w-full rounded-xl object-cover shadow-md"
               loading="lazy"
             />
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fb9a7106ecdaa444b8efc312ae06c585e%2Ffe2148542ff6473885a4c58dc36cc48b?format=webp&width=800"
               alt="Monastery with wildflowers and mountains"
-              className="aspect-[4/3] w-full rounded-lg object-cover"
+              className="aspect-[5/4] w-full rounded-xl object-cover shadow-md"
               loading="lazy"
             />
           </div>
