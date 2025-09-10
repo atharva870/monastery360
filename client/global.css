@@ -27,9 +27,9 @@
 /* Pattern utilities and subtle effects */
 .pattern-jaali {
   background-image: url("/patterns/jaali.svg");
-  background-size: 24px 24px;
+  background-size: 22px 22px;
   background-repeat: repeat;
-  opacity: 0.15;
+  opacity: 0.25;
 }
 .pattern-border {
   background-image: url("/patterns/border-motif.svg");
@@ -78,8 +78,8 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    /* Light theme with higher contrast and traditional Sikkim colours */
-    --background: 45 33% 98%; /* warm cream */
+    /* Vibrant, Indian-centric palette (saffron, sindoor red, peacock teal) */
+    --background: 43 60% 98%; /* cream */
     --foreground: 215 40% 10%;
 
     --card: 0 0% 100%;
@@ -89,78 +89,78 @@
     --popover-foreground: 215 40% 12%;
 
     /* Saffron primary */
-    --primary: 40 95% 45%;
+    --primary: 38 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    /* Soft emerald surfaces */
-    --secondary: 160 30% 94%;
+    /* Peacock teal surfaces */
+    --secondary: 178 40% 92%;
     --secondary-foreground: 215 40% 12%;
 
-    --muted: 215 20% 95%;
+    --muted: 30 35% 95%;
     --muted-foreground: 215 18% 32%;
 
-    /* Monastic red accent */
-    --accent: 356 70% 45%;
+    /* Sindoor red accent */
+    --accent: 352 75% 44%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 80% 45%;
     --destructive-foreground: 0 0% 100%;
 
     /* Stronger borders/inputs for contrast */
-    --border: 215 16% 82%;
-    --input: 215 16% 82%;
-    --ring: 40 95% 45%;
+    --border: 215 16% 80%;
+    --input: 215 16% 80%;
+    --ring: 38 100% 50%;
 
-    --radius: 0.6rem;
+    --radius: 0.7rem;
 
     /* Sidebar (if used) */
-    --sidebar-background: 45 33% 98%;
+    --sidebar-background: 43 60% 98%;
     --sidebar-foreground: 215 40% 12%;
-    --sidebar-primary: 40 95% 45%;
+    --sidebar-primary: 38 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 160 30% 94%;
+    --sidebar-accent: 178 40% 92%;
     --sidebar-accent-foreground: 215 40% 12%;
-    --sidebar-border: 215 16% 82%;
-    --sidebar-ring: 40 95% 45%;
+    --sidebar-border: 215 16% 80%;
+    --sidebar-ring: 38 100% 50%;
   }
 
   .dark {
-    --background: 215 30% 8%;
+    --background: 220 35% 6%;
     --foreground: 0 0% 98%;
 
-    --card: 215 30% 10%;
+    --card: 220 30% 10%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 215 30% 10%;
+    --popover: 220 30% 10%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 45 95% 55%;
+    --primary: 38 95% 60%;
     --primary-foreground: 25 20% 12%;
 
-    --secondary: 160 25% 18%;
+    --secondary: 178 25% 18%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 215 23% 18%;
+    --muted: 220 23% 18%;
     --muted-foreground: 215 18% 70%;
 
-    --accent: 356 75% 50%;
+    --accent: 352 80% 55%;
     --accent-foreground: 25 20% 12%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 22% 22%;
-    --input: 215 22% 22%;
-    --ring: 45 95% 55%;
+    --border: 220 22% 22%;
+    --input: 220 22% 22%;
+    --ring: 38 95% 60%;
 
-    --sidebar-background: 215 30% 8%;
+    --sidebar-background: 220 35% 6%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 45 95% 55%;
+    --sidebar-primary: 38 95% 60%;
     --sidebar-primary-foreground: 25 20% 12%;
-    --sidebar-accent: 160 25% 18%;
+    --sidebar-accent: 178 25% 18%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 215 22% 22%;
-    --sidebar-ring: 45 95% 55%;
+    --sidebar-border: 220 22% 22%;
+    --sidebar-ring: 38 95% 60%;
   }
 }
 
@@ -176,6 +176,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-variant-numeric: lining-nums tabular-nums;
+    background-image:
+      radial-gradient(1200px 600px at 10% -10%, hsl(var(--primary) / 0.10), transparent 60%),
+      radial-gradient(1200px 600px at 110% 10%, hsl(var(--accent) / 0.08), transparent 60%);
+    background-attachment: fixed;
   }
 
   h1,
