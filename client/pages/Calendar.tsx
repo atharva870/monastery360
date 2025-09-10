@@ -7,7 +7,8 @@ export default function Calendar() {
       <header className="mb-6">
         <h1 className="font-serif text-3xl md:text-4xl">Cultural Calendar</h1>
         <p className="mt-2 max-w-prose text-foreground/70">
-          A full 365‑day view with monastic festivals pinned. Lunar festivals are shown in their months; exact dates vary annually.
+          A full 365‑day view with monastic festivals pinned. Lunar festivals
+          are shown in their months; exact dates vary annually.
         </p>
       </header>
 
@@ -19,8 +20,17 @@ export default function Calendar() {
           {EVENTS.map((e) => (
             <li key={e.name} className="rounded-xl border p-4">
               <h3 className="font-serif text-xl">{e.name}</h3>
-              <p className="text-sm text-foreground/70">{e.when} · {e.where}</p>
-              <a className="mt-2 inline-block text-sm underline" href={e.source} target="_blank" rel="noreferrer">Source</a>
+              <p className="text-sm text-foreground/70">
+                {e.when} · {e.where}
+              </p>
+              <a
+                className="mt-2 inline-block text-sm underline"
+                href={e.source}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Source
+              </a>
             </li>
           ))}
         </ul>

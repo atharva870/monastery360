@@ -9,16 +9,26 @@
   .btn {
     @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition duration-200 ease-out shadow-sm hover:shadow-md focus-visible:ring-ring;
   }
-  .btn-sm { @apply px-3 py-1 text-xs; }
+  .btn-sm {
+    @apply px-3 py-1 text-xs;
+  }
   .btn-primary {
-    background-image: linear-gradient(90deg, hsl(var(--primary)) , hsl(var(--accent)));
+    background-image: linear-gradient(
+      90deg,
+      hsl(var(--primary)),
+      hsl(var(--accent))
+    );
     color: hsl(var(--primary-foreground));
   }
-  .btn-primary:hover { filter: brightness(1.05); }
+  .btn-primary:hover {
+    filter: brightness(1.05);
+  }
   .btn-outline {
     @apply border bg-background/60 backdrop-blur;
   }
-  .btn-outline:hover { @apply bg-background; }
+  .btn-outline:hover {
+    @apply bg-background;
+  }
   .ui-card {
     @apply overflow-hidden rounded-xl border bg-card shadow-sm transition hover:shadow-lg hover:ring-1 hover:ring-accent/30;
   }
@@ -177,8 +187,16 @@
     -moz-osx-font-smoothing: grayscale;
     font-variant-numeric: lining-nums tabular-nums;
     background-image:
-      radial-gradient(1200px 600px at 10% -10%, hsl(var(--primary) / 0.10), transparent 60%),
-      radial-gradient(1200px 600px at 110% 10%, hsl(var(--accent) / 0.08), transparent 60%);
+      radial-gradient(
+        1200px 600px at 10% -10%,
+        hsl(var(--primary) / 0.1),
+        transparent 60%
+      ),
+      radial-gradient(
+        1200px 600px at 110% 10%,
+        hsl(var(--accent) / 0.08),
+        transparent 60%
+      );
     background-attachment: fixed;
   }
 
@@ -215,7 +233,7 @@
     font-size: 12px;
     line-height: 1.1;
     border-radius: 6px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   }
   .leaflet-tooltip.map-label .label-sub {
     opacity: 0.7;

@@ -36,7 +36,10 @@ export default function Index() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/40" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 mix-blend-overlay bg-pan-slow" />
-          <div className="pattern-jaali absolute inset-0 opacity-20" aria-hidden="true" />
+          <div
+            className="pattern-jaali absolute inset-0 opacity-20"
+            aria-hidden="true"
+          />
         </div>
         <div className="container flex min-h-[70vh] flex-col items-start justify-end py-24 sm:min-h-[80vh]">
           <motion.h1
@@ -55,20 +58,14 @@ export default function Index() {
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
           >
-            A minimal, elegant archive celebrating sacred Himalayan
-            heritage built for travelers, researchers, and future generations.
+            A minimal, elegant archive celebrating sacred Himalayan heritage
+            built for travelers, researchers, and future generations.
           </motion.p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              to="/explore"
-              className="btn btn-primary"
-            >
+            <Link to="/explore" className="btn btn-primary">
               Explore Monasteries
             </Link>
-            <a
-              href="#mission"
-              className="btn btn-outline"
-            >
+            <a href="#mission" className="btn btn-outline">
               Learn More
             </a>
           </div>
@@ -96,10 +93,7 @@ export default function Index() {
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[IMAGES.hero, IMAGES.a, IMAGES.b, IMAGES.c].map((src, i) => (
-            <article
-              key={src}
-              className="ui-card group hover-float"
-            >
+            <article key={src} className="ui-card group hover-float">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={src}
@@ -128,7 +122,11 @@ export default function Index() {
                         : "Novice Monks"}
                 </h3>
                 <p className="text-sm text-foreground/60">
-                  {i === 0 ? "Gangtok, Sikkim" : i === 3 ? "Sikkim" : "Himalayan Region"}
+                  {i === 0
+                    ? "Gangtok, Sikkim"
+                    : i === 3
+                      ? "Sikkim"
+                      : "Himalayan Region"}
                 </p>
               </div>
             </article>
@@ -204,7 +202,18 @@ export default function Index() {
               enabling travelers and researchers to explore with ease.
             </p>
             <p className="mt-3 max-w-prose text-foreground/70">
-              Our mission is to protect the ancient monasteries of Sikkim, the irreplaceable custodians of its unique Vajrayana Buddhist heritage. These sacred structures, housing priceless artifacts and centuries of tradition, face threats from time, climate, and seismic activity. We are committed to their holistic preservation through careful structural restoration using traditional methods, digital archiving of sacred texts and art, and supporting the monastic communities in their stewardship. By uniting conservation experts, local monks, and global supporters, we work to ensure these active centers of faith and culture are not lost. Our goal is to safeguard these serene sanctuaries so they may continue as thriving spiritual beacons for generations to come.
+              Our mission is to protect the ancient monasteries of Sikkim, the
+              irreplaceable custodians of its unique Vajrayana Buddhist
+              heritage. These sacred structures, housing priceless artifacts and
+              centuries of tradition, face threats from time, climate, and
+              seismic activity. We are committed to their holistic preservation
+              through careful structural restoration using traditional methods,
+              digital archiving of sacred texts and art, and supporting the
+              monastic communities in their stewardship. By uniting conservation
+              experts, local monks, and global supporters, we work to ensure
+              these active centers of faith and culture are not lost. Our goal
+              is to safeguard these serene sanctuaries so they may continue as
+              thriving spiritual beacons for generations to come.
             </p>
             <div className="mt-6 inline-flex items-center gap-4 rounded-xl border p-4 shadow-sm">
               <div className="text-3xl font-semibold">100+</div>

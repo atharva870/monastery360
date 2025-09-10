@@ -40,7 +40,9 @@ function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 border-b border-accent/30 text-primary-foreground transition-all ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-black/35 shadow-lg" : "bg-gradient-to-r from-primary/95 to-accent/90"}`}>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b border-accent/30 text-primary-foreground transition-all ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-black/35 shadow-lg" : "bg-gradient-to-r from-primary/95 to-accent/90"}`}
+    >
       <div className="container flex h-16 items-center justify-between">
         <Link
           to="/"

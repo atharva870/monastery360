@@ -55,16 +55,23 @@ export default function YearCalendar({ events }: { events: Event[] }) {
     <div>
       <div className="mb-4 flex items-center justify-between">
         <h2 className="font-serif text-2xl">{year} Festivals Calendar</h2>
-        <div className="text-xs text-foreground/60">Lunar-date festivals are shown on relevant months</div>
+        <div className="text-xs text-foreground/60">
+          Lunar-date festivals are shown on relevant months
+        </div>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {MONTHS.map((label, month) => {
           const total = daysInMonth(year, month);
           const start = firstWeekday(year, month);
-          const cells = Array.from({ length: start + total }, (_, i) => (i < start ? null : i - start + 1));
+          const cells = Array.from({ length: start + total }, (_, i) =>
+            i < start ? null : i - start + 1,
+          );
           const pinned = events.filter((ev) => ev.months?.includes(month));
           return (
-            <section key={label} className="rounded-xl border bg-card p-3 shadow-sm">
+            <section
+              key={label}
+              className="rounded-xl border bg-card p-3 shadow-sm"
+            >
               <header className="mb-2 flex items-center justify-between">
                 <h3 className="font-serif text-lg">{label}</h3>
                 {pinned.length > 0 && (
@@ -77,7 +84,8 @@ export default function YearCalendar({ events }: { events: Event[] }) {
                 <ul className="mb-2 space-y-1">
                   {pinned.map((e) => (
                     <li key={e.name} className="text-xs text-foreground/80">
-                      • <span className="font-medium">{e.name}</span> <span className="opacity-70">({e.when})</span>
+                      • <span className="font-medium">{e.name}</span>{" "}
+                      <span className="opacity-70">({e.when})</span>
                     </li>
                   ))}
                 </ul>
@@ -95,17 +103,23 @@ export default function YearCalendar({ events }: { events: Event[] }) {
                       key={i}
                       className={classNames(
                         "aspect-square rounded-md border bg-background",
-                        day ? "" : "opacity-0"
+                        day ? "" : "opacity-0",
                       )}
                       title={exact?.map((e) => e.name).join(", ")}
                     >
                       {day && (
                         <div className="relative h-full w-full p-1">
-                          <div className="text-[11px] text-foreground/70">{day}</div>
+                          <div className="text-[11px] text-foreground/70">
+                            {day}
+                          </div>
                           {exact && exact.length > 0 && (
                             <div className="absolute bottom-1 left-1 right-1 flex flex-wrap gap-1">
                               {exact.map((e) => (
-                                <span key={e.name} className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
+                                <span
+                                  key={e.name}
+                                  className="h-1.5 w-1.5 rounded-full bg-accent"
+                                  aria-hidden
+                                />
                               ))}
                             </div>
                           )}
@@ -119,7 +133,10 @@ export default function YearCalendar({ events }: { events: Event[] }) {
           );
         })}
       </div>
-      <div className="mt-3 text-xs text-foreground/60">• Dots mark festivals with exact dates when provided. Others appear as month pins with their lunar timing noted.</div>
+      <div className="mt-3 text-xs text-foreground/60">
+        • Dots mark festivals with exact dates when provided. Others appear as
+        month pins with their lunar timing noted.
+      </div>
     </div>
   );
 }

@@ -21,10 +21,7 @@ export default function Explore() {
         <div className="-mx-4 mb-8 overflow-x-auto px-4">
           <div className="flex snap-x snap-mandatory gap-4">
             {items.slice(0, 12).map((m) => (
-              <div
-                key={m.name}
-                className="snap-start shrink-0 w-72 ui-card"
-              >
+              <div key={m.name} className="snap-start shrink-0 w-72 ui-card">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={m.image}
@@ -45,10 +42,7 @@ export default function Explore() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((m) => (
-            <article
-              key={m.name}
-              className="ui-card group"
-            >
+            <article key={m.name} className="ui-card group">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={m.image}
