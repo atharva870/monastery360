@@ -81,13 +81,13 @@ export default function Archives() {
           placeholder="Search (semantic tags included)"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          className="w-full max-w-md rounded-md border bg-background px-3 py-2 text-sm"
+          className="w-full max-w-md rounded-md border bg-background px-3 py-2 text-sm shadow-sm focus:ring-2"
           aria-label="Search archives"
         />
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setTag(null)}
-            className={`rounded-full border px-3 py-1 text-sm ${!tag ? "bg-primary text-primary-foreground" : "bg-background"}`}
+            className={`btn btn-outline btn-sm ${!tag ? "bg-primary text-primary-foreground" : ""}`}
           >
             All
           </button>
@@ -95,7 +95,7 @@ export default function Archives() {
             <button
               key={t}
               onClick={() => setTag(t)}
-              className={`rounded-full border px-3 py-1 text-sm ${tag === t ? "bg-primary text-primary-foreground" : "bg-background"}`}
+              className={`btn btn-outline btn-sm ${tag === t ? "bg-primary text-primary-foreground" : ""}`}
             >
               {t}
             </button>
@@ -105,7 +105,7 @@ export default function Archives() {
 
       <ul className="grid gap-4 sm:grid-cols-2">
         {results.map((i) => (
-          <li key={i.url} className="rounded-xl border p-4">
+          <li key={i.url} className="ui-card p-4">
             <h2 className="font-serif text-xl">
               <a
                 href={i.url}
@@ -124,7 +124,7 @@ export default function Archives() {
               {i.tags.map((t) => (
                 <span
                   key={t}
-                  className="rounded-full border px-2 py-0.5 text-xs"
+                  className="rounded-full border px-2 py-0.5 text-xs bg-secondary/50"
                 >
                   {t}
                 </span>
