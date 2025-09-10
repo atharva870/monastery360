@@ -213,7 +213,7 @@ export default function Index() {
               </div>
             </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid items-stretch gap-5 sm:grid-cols-3">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fb9a7106ecdaa444b8efc312ae06c585e%2F0a8d64d293924739b2c4625dd6bfcc13?format=webp&width=800"
               alt="Monastery courtyard with monks playing"
