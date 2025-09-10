@@ -194,7 +194,7 @@ export default function Index() {
               Preservation Through Digitization
             </h2>
             <p className="mt-4 max-w-prose text-foreground/70">
-              We document monasteries across Sikkim—architecture, thangkas,
+              We document monasteries across Sikkim architecture, thangkas,
               rituals, and oral histories—so their stories endure. Our approach
               is minimalist and respectful, focusing on clarity, accuracy, and
               beauty.
