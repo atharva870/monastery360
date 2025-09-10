@@ -38,7 +38,7 @@ export default function Calendar() {
               href={b.href}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border px-4 py-2 text-sm underline-offset-4 hover:underline"
+              className="btn btn-outline"
             >
               {b.label}
             </a>
