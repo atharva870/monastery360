@@ -232,6 +232,18 @@ export default function Index() {
               className="aspect-[5/4] w-full rounded-xl object-cover shadow-md"
               loading="lazy"
             />
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fb9a7106ecdaa444b8efc312ae06c585e%2F0dea1711404d440eb5482d7ec3e0d748?format=webp&width=800"
+              alt="Prayer wheels with colorful flags"
+              className="aspect-[5/4] w-full rounded-xl object-cover shadow-md"
+              loading="lazy"
+            />
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fb9a7106ecdaa444b8efc312ae06c585e%2Ffbcc3d8169224c2389fefec3129878c5?format=webp&width=800"
+              alt="Buddha Park, Ravangla with grand statue"
+              className="aspect-[5/4] w-full rounded-xl object-cover shadow-md"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
