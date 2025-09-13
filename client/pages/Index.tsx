@@ -159,7 +159,19 @@ export default function Index() {
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-black/0" />
                   </div>
                   <div className="p-3">
-                    <p className="font-serif text-base">{m.name}</p>
+                    {m.links?.find((l) => l.label === "Wikipedia")?.href ? (
+                      <a
+                        href={m.links.find((l) => l.label === "Wikipedia")!.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-serif text-base hover:underline"
+                        aria-label={`${m.name} on Wikipedia`}
+                      >
+                        {m.name}
+                      </a>
+                    ) : (
+                      <p className="font-serif text-base">{m.name}</p>
+                    )}
                     <p className="text-xs text-foreground/60">{m.location}</p>
                   </div>
                 </div>
