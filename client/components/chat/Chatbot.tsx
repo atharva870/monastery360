@@ -34,6 +34,46 @@ function diceCoefficient(a: string, b: string) {
   return (2 * overlap) / (sizeA + sizeB || 1);
 }
 
+function wikiFor(m: Monastery) {
+  const direct = m.links?.find((l) => l.label === "Wikipedia")?.href;
+  if (direct) return direct;
+  return `https://en.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(
+    m.name + " Sikkim monastery",
+  )}`;
+}
+
+function linkify(text: string) {
+  const urlRegex = /(https?:\/\/[^\s)]+)|(www\.[^\s)]+)/gi;
+  const parts = [] as (string | { url: string })[];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  const regex = new RegExp(urlRegex);
+  while ((match = regex.exec(text)) !== null) {
+    const url = match[0];
+    const idx = match.index;
+    if (idx > lastIndex) parts.push(text.slice(lastIndex, idx));
+    parts.push({ url });
+    lastIndex = idx + url.length;
+  }
+  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
+  if (parts.length === 0) return text;
+  return parts.map((p, i) =>
+    typeof p === "string" ? (
+      <span key={i}>{p}</span>
+    ) : (
+      <a
+        key={i}
+        href={p.url.startsWith("http") ? p.url : `https://${p.url}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline"
+      >
+        {p.url}
+      </a>
+    ),
+  );
+}
+
 type Msg = { role: "user" | "assistant"; content: string };
 
 export default function Chatbot() {
@@ -43,7 +83,7 @@ export default function Chatbot() {
     {
       role: "assistant",
       content:
-        "Hi! I’m your Sikkim Monasteries guide. Ask about any monastery (history, location, nearby), festivals, permits, etiquette, or transport. I answer from a built‑in dataset—no links needed.",
+        "Hi! I’m your Sikkim Monasteries guide. Ask about any monastery (history, location, nearby), festivals, permits, etiquette, or transport. I’ll also share a Wikipedia link when helpful.",
     },
   ]);
   const listRef = useRef<HTMLDivElement | null>(null);
@@ -94,6 +134,7 @@ export default function Chatbot() {
     if (best && best.score > 0.2) {
       const m = best.m;
       const kb = KBDOCS[m.name];
+      const wiki = wikiFor(m);
       const bits = [
         `${m.name} — ${m.location}.`,
         kb?.summary || "",
@@ -105,6 +146,7 @@ export default function Chatbot() {
           : "",
         kb?.tips?.length ? `Tips: ${kb.tips.join("; ")}.` : "",
         `Location on Map tab: ${m.lat.toFixed(4)}, ${m.lon.toFixed(4)}.`,
+        `Wikipedia: ${wiki}`,
       ].filter(Boolean);
       return bits.join(" \n");
     }
@@ -118,7 +160,8 @@ export default function Chatbot() {
     if (secondBest && secondBest.score > 0.2) {
       const m = MONASTERIES.find((x) => x.name === secondBest!.name)!;
       const kb = KBDOCS[m.name];
-      return `${m.name} — ${m.location}. ${kb.summary}`;
+      const wiki = wikiFor(m);
+      return `${m.name} — ${m.location}. ${kb.summary}\nWikipedia: ${wiki}`;
     }
 
     return "I couldn’t find that yet. Ask about a specific monastery, festival dates, permits or etiquette.";
@@ -186,7 +229,7 @@ export default function Chatbot() {
                 >
                   {m.content.split("\n").map((line, j) => (
                     <p key={j} className="whitespace-pre-wrap">
-                      {line}
+                      {linkify(line)}
                     </p>
                   ))}
                 </div>
