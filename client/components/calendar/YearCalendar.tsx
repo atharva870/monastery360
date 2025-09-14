@@ -117,7 +117,16 @@ export default function YearCalendar({ events }: { events: Event[] }) {
                     >
                       {day && (
                         <div className="relative h-full w-full p-1">
-                          <div className="text-[11px] text-foreground/70">
+                          <div
+                            className={classNames(
+                              "text-[11px]",
+                              exact && exact.length > 0
+                                ? exact.some((e) => e.main)
+                                  ? "font-bold text-red-700"
+                                  : "font-bold text-red-600"
+                                : "text-foreground/70",
+                            )}
+                          >
                             {day}
                           </div>
                           {exact && exact.length > 0 && (
