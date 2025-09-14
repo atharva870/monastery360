@@ -7,6 +7,7 @@ export type Event = {
   lon?: number;
   months?: number[];
   dates?: string[];
+  main?: boolean;
 };
 
 export const EVENTS: Event[] = [
@@ -19,6 +20,7 @@ export const EVENTS: Event[] = [
     source:
       "https://sikkimtourism.gov.in/Public/ExperienceSikkim/FairsAndFestivalDetails/FF20A071?type=Festival%2F1000",
     months: [7, 8],
+    main: true,
   },
   {
     name: "Bumchu Festival",
@@ -28,6 +30,7 @@ export const EVENTS: Event[] = [
     lon: 88.2857,
     source: "https://en.wikipedia.org/wiki/Tashiding_Monastery",
     months: [1, 2],
+    main: true,
   },
   {
     name: "Saga Dawa",
@@ -37,6 +40,7 @@ export const EVENTS: Event[] = [
     lon: 88.614,
     source: "https://en.wikipedia.org/wiki/Saga_Dawa",
     months: [4, 5],
+    main: true,
   },
   {
     name: "Losoong / Namsoong (Sikkimese New Year)",
@@ -46,6 +50,7 @@ export const EVENTS: Event[] = [
     lon: 88.5864,
     source: "https://en.wikipedia.org/wiki/Losoong_Festival",
     months: [11],
+    main: true,
   },
 ];
 
