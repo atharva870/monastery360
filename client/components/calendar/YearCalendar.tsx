@@ -125,7 +125,10 @@ export default function YearCalendar({ events }: { events: Event[] }) {
                               {exact.map((e) => (
                                 <span
                                   key={e.name}
-                                  className="h-1.5 w-1.5 rounded-full bg-accent"
+                                  className={classNames(
+                                    "h-1.5 w-1.5 rounded-full",
+                                    e.main ? "bg-red-500" : "bg-accent",
+                                  )}
                                   aria-hidden
                                 />
                               ))}
