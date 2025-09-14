@@ -83,9 +83,17 @@ export default function YearCalendar({ events }: { events: Event[] }) {
               {pinned.length > 0 && (
                 <ul className="mb-2 space-y-1">
                   {pinned.map((e) => (
-                    <li key={e.name} className="text-xs text-foreground/80">
+                    <li
+                      key={e.name}
+                      className={classNames(
+                        "text-xs",
+                        e.main ? "text-red-600" : "text-foreground/80",
+                      )}
+                    >
                       • <span className="font-medium">{e.name}</span>{" "}
-                      <span className="opacity-70">({e.when})</span>
+                      <span className={e.main ? "opacity-80" : "opacity-70"}>
+                        ({e.when})
+                      </span>
                     </li>
                   ))}
                 </ul>
