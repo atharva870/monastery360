@@ -21,6 +21,9 @@ const IMAGES = {
 export default function Index() {
   const heroRef = useRef<HTMLImageElement | null>(null);
   useParallax(heroRef, 0.12);
+  const FEATURED = MONASTERIES.filter((m) =>
+    m.links?.some((l) => l.label === "Wikipedia"),
+  ).slice(0, 6);
   return (
     <div>
       {/* Hero */}
@@ -92,45 +95,33 @@ export default function Index() {
           </Link>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[IMAGES.hero, IMAGES.a, IMAGES.b, IMAGES.c].map((src, i) => (
-            <article key={src} className="ui-card group hover-float">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img
-                  src={src}
-                  alt={
-                    i === 0
-                      ? "Monastic architecture in Gangtok, Sikkim"
-                      : i === 1
-                        ? "Buddhist temple interior with vibrant art"
-                        : i === 2
-                          ? "Ancient stupas in the mountains"
-                          : "Young monks seated at a monastery in Sikkim (square crop)"
-                  }
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
-                  loading="lazy"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-black/0" />
-              </div>
-              <div className="p-4">
-                <h3 className="font-serif text-lg">
-                  {i === 0
-                    ? "Gangtok Monastic Detail"
-                    : i === 1
-                      ? "Temple Interior"
-                      : i === 2
-                        ? "Mountain Stupas"
-                        : "Novice Monks"}
-                </h3>
-                <p className="text-sm text-foreground/60">
-                  {i === 0
-                    ? "Gangtok, Sikkim"
-                    : i === 3
-                      ? "Sikkim"
-                      : "Himalayan Region"}
-                </p>
-              </div>
-            </article>
-          ))}
+          {FEATURED.map((m) => {
+            const wiki = m.links!.find((l) => l.label === "Wikipedia")!.href;
+            return (
+              <a
+                key={m.name}
+                href={wiki}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ui-card group hover-float block"
+                aria-label={`${m.name} on Wikipedia`}
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                    loading="lazy"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-black/0" />
+                </div>
+                <div className="p-4">
+                  <h3 className="font-serif text-lg group-hover:underline">{m.name}</h3>
+                  <p className="text-sm text-foreground/60">{m.location}</p>
+                </div>
+              </a>
+            );
+          })}
         </div>
       </section>
 
