@@ -88,50 +88,52 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    /* Vibrant, Indian-centric palette (saffron, sindoor red, peacock teal) */
-    --background: 43 60% 98%; /* cream */
-    --foreground: 215 40% 10%;
+    /* WOW palette: sunrise saffron, royal magenta, peacock teal, electric violet */
+    --background: 42 70% 98%;
+    --foreground: 230 25% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 40% 12%;
+    --card-foreground: 230 25% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 40% 12%;
+    --popover-foreground: 230 25% 14%;
 
-    /* Saffron primary */
-    --primary: 38 100% 50%;
+    --primary: 28 96% 54%; /* saffron */
     --primary-foreground: 0 0% 100%;
 
-    /* Peacock teal surfaces */
-    --secondary: 178 40% 92%;
-    --secondary-foreground: 215 40% 12%;
+    --secondary: 178 52% 90%; /* peacock tint */
+    --secondary-foreground: 230 25% 14%;
 
-    --muted: 30 35% 95%;
-    --muted-foreground: 215 18% 32%;
+    --muted: 260 22% 96%;
+    --muted-foreground: 230 18% 32%;
 
-    /* Sindoor red accent */
-    --accent: 352 75% 44%;
+    --accent: 322 85% 52%; /* royal magenta */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 80% 45%;
+    --destructive: 0 78% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Stronger borders/inputs for contrast */
-    --border: 215 16% 80%;
-    --input: 215 16% 80%;
-    --ring: 38 100% 50%;
+    --border: 230 18% 78%;
+    --input: 230 18% 78%;
+    --ring: 280 90% 60%; /* electric violet */
 
-    --radius: 0.7rem;
+    --radius: 1rem;
 
-    /* Sidebar (if used) */
-    --sidebar-background: 43 60% 98%;
-    --sidebar-foreground: 215 40% 12%;
-    --sidebar-primary: 38 100% 50%;
+    /* Sidebar */
+    --sidebar-background: 42 70% 98%;
+    --sidebar-foreground: 230 25% 14%;
+    --sidebar-primary: 28 96% 54%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 178 40% 92%;
-    --sidebar-accent-foreground: 215 40% 12%;
-    --sidebar-border: 215 16% 80%;
-    --sidebar-ring: 38 100% 50%;
+    --sidebar-accent: 178 52% 90%;
+    --sidebar-accent-foreground: 230 25% 14%;
+    --sidebar-border: 230 18% 78%;
+    --sidebar-ring: 280 90% 60%;
+
+    /* Extra hues for gradients */
+    --hue-a: 28 96% 54%;
+    --hue-b: 322 85% 52%;
+    --hue-c: 198 90% 48%;
+    --hue-d: 280 90% 60%;
   }
 
   .dark {
