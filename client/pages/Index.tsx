@@ -46,7 +46,7 @@ export default function Index() {
         </div>
         <div className="container flex min-h-[70vh] flex-col items-start justify-end py-24 sm:min-h-[80vh]">
           <motion.h1
-            className="max-w-3xl font-serif text-4xl text-white sm:text-5xl md:text-6xl"
+            className="max-w-3xl font-serif text-4xl text-gradient sm:text-5xl md:text-6xl"
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
@@ -79,7 +79,7 @@ export default function Index() {
       <section className="container py-16 md:py-20">
         <div className="mb-10 flex items-end justify-between">
           <motion.h2
-            className="font-serif text-3xl md:text-4xl"
+            className="font-serif text-3xl md:text-4xl text-gradient"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -103,7 +103,7 @@ export default function Index() {
                 href={wiki}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ui-card group hover-float block"
+                className="ui-card border-gradient card-vibrant group hover-float block"
                 aria-label={`${m.name} on Wikipedia`}
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
@@ -128,7 +128,7 @@ export default function Index() {
       {/* Highlights Carousel */}
       <section className="container py-10">
         <motion.h2
-          className="mb-4 font-serif text-2xl"
+          className="mb-4 font-serif text-2xl text-gradient"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -139,7 +139,7 @@ export default function Index() {
           <CarouselContent>
             {MONASTERIES.slice(0, 10).map((m) => (
               <CarouselItem key={m.name} className="md:basis-1/2 lg:basis-1/3">
-                <div className="ui-card hover-float">
+                <div className="ui-card border-gradient card-vibrant hover-float group">
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
                       src={m.image}
