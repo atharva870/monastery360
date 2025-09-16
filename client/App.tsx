@@ -48,10 +48,10 @@ function Header() {
           to="/"
           className="group inline-flex items-center gap-2 text-primary-foreground"
         >
-          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/90 text-primary-foreground shadow-sm">
-            <span className="h-2 w-2 rounded-full bg-primary-foreground/90" />
+          <span className="inline-flex h-7 w-7 items-center justify-center rounded-full shadow-sm border-gradient">
+            <span className="h-4 w-4 rounded-full" style={{ background: "linear-gradient(135deg, hsl(var(--hue-a)), hsl(var(--hue-b)))" }} />
           </span>
-          <span className="font-serif text-xl tracking-tight text-primary-foreground group-hover:opacity-90">
+          <span className="font-serif text-xl tracking-tight text-gradient group-hover:opacity-90">
             Monastery 360
           </span>
         </Link>
