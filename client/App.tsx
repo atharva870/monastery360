@@ -55,7 +55,7 @@ function Header() {
             Monastery 360
           </span>
         </Link>
-        <nav className="hidden items-center gap-6 md:flex text-primary-foreground">
+        <nav className="hidden items-center gap-6 md:flex text-primary-foreground" role="navigation" aria-label="Main">
           <NavLink
             to="/"
             className={({ isActive }) =>
