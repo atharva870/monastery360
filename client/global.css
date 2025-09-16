@@ -222,6 +222,37 @@
   .glow-cta {
     animation: glow-pulse 2.5s ease-in-out infinite;
   }
+  .glass {
+    backdrop-filter: saturate(140%) blur(10px);
+    background: linear-gradient(
+      to bottom right,
+      hsl(var(--card) / 0.72),
+      hsl(var(--card) / 0.52)
+    );
+    border: 1px solid hsl(var(--border) / 0.6);
+  }
+  .text-gradient {
+    background: linear-gradient(90deg, hsl(var(--hue-a)), hsl(var(--hue-b)), hsl(var(--hue-d)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .border-gradient {
+    position: relative;
+  }
+  .border-gradient::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(var(--hue-a)), hsl(var(--hue-c)), hsl(var(--hue-b)));
+  }
+  .card-vibrant {
+    background: radial-gradient(60% 80% at 20% 0%, hsl(var(--hue-a) / 0.12), transparent 60%),
+      radial-gradient(60% 80% at 100% 20%, hsl(var(--hue-b) / 0.12), transparent 60%),
+      hsl(var(--card));
+  }
 
   /* Leaflet map label styling */
   .leaflet-tooltip.map-label {
