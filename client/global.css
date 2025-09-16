@@ -189,16 +189,9 @@
     -moz-osx-font-smoothing: grayscale;
     font-variant-numeric: lining-nums tabular-nums;
     background-image:
-      radial-gradient(
-        1200px 600px at 10% -10%,
-        hsl(var(--primary) / 0.1),
-        transparent 60%
-      ),
-      radial-gradient(
-        1200px 600px at 110% 10%,
-        hsl(var(--accent) / 0.08),
-        transparent 60%
-      );
+      radial-gradient(1200px 600px at 0% -10%, hsl(var(--hue-a) / 0.16), transparent 60%),
+      radial-gradient(1200px 600px at 110% 10%, hsl(var(--hue-b) / 0.14), transparent 60%),
+      radial-gradient(1000px 500px at 50% 110%, hsl(var(--hue-c) / 0.12), transparent 60%);
     background-attachment: fixed;
   }
 
