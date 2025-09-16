@@ -13,15 +13,11 @@
     @apply px-3 py-1 text-xs;
   }
   .btn-primary {
-    background-image: linear-gradient(
-      90deg,
-      hsl(var(--primary)),
-      hsl(var(--accent))
-    );
+    background-image: linear-gradient(90deg, hsl(var(--hue-a)), hsl(var(--hue-b)) 50%, hsl(var(--hue-d)));
     color: hsl(var(--primary-foreground));
   }
   .btn-primary:hover {
-    filter: brightness(1.05);
+    filter: brightness(1.06);
   }
   .btn-outline {
     @apply border bg-background/60 backdrop-blur;
@@ -30,7 +26,8 @@
     @apply bg-background;
   }
   .ui-card {
-    @apply overflow-hidden rounded-xl border bg-card shadow-sm transition hover:shadow-lg hover:ring-1 hover:ring-accent/30;
+    @apply overflow-hidden rounded-2xl border shadow-sm transition hover:shadow-2xl hover:ring-1 hover:ring-accent/30;
+    background: hsl(var(--card));
   }
 }
 
