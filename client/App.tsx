@@ -157,6 +157,7 @@ function Footer() {
         className="pointer-events-none pattern-border absolute inset-x-0 top-0 h-2 opacity-80"
         aria-hidden="true"
       />
+      <div className="ribbon-gradient absolute inset-x-0 top-2 h-[3px] opacity-80" aria-hidden="true" />
       <div className="container grid gap-6 py-12 md:grid-cols-2 md:gap-8">
         <div>
           <p className="font-serif text-lg">Digitize. Preserve. Discover.</p>
