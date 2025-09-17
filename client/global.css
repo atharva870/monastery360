@@ -26,7 +26,7 @@
     @apply bg-background;
   }
   .ui-card {
-    @apply overflow-hidden rounded-2xl border shadow-sm transition hover:shadow-2xl hover:ring-1 hover:ring-accent/30;
+    @apply overflow-hidden rounded-2xl border shadow-sm transition hover:shadow-lg hover:ring-1 hover:ring-accent/25;
     background: hsl(var(--card));
   }
 }
@@ -92,56 +92,56 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    /* WOW palette: sunrise saffron, royal magenta, peacock teal, electric violet */
-    --background: 42 70% 98%;
-    --foreground: 230 25% 12%;
+    /* Sleek, modern palette: warm saffron, vermilion red, earthy neutrals, subtle greens */
+    --background: 42 55% 98%; /* warm off‑white */
+    --foreground: 230 20% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 230 25% 14%;
+    --card-foreground: 230 22% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 230 25% 14%;
+    --popover-foreground: 230 22% 14%;
 
-    --primary: 28 96% 54%; /* saffron */
+    --primary: 35 92% 56%; /* saffron/yellow */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 178 52% 90%; /* peacock tint */
-    --secondary-foreground: 230 25% 14%;
+    --secondary: 140 30% 92%; /* subtle sage green */
+    --secondary-foreground: 230 22% 16%;
 
-    --muted: 260 22% 96%;
+    --muted: 30 20% 96%; /* earthy tint */
     --muted-foreground: 230 18% 32%;
 
-    --accent: 322 85% 52%; /* royal magenta */
+    --accent: 8 74% 55%; /* warm vermilion red */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 78% 50%;
+    --destructive: 0 78% 48%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 230 18% 78%;
-    --input: 230 18% 78%;
-    --ring: 280 90% 60%; /* electric violet */
+    --border: 230 16% 80%;
+    --input: 230 16% 80%;
+    --ring: 35 92% 56%;
 
-    --radius: 1rem;
+    --radius: 0.9rem;
 
     /* Sidebar */
-    --sidebar-background: 42 70% 98%;
-    --sidebar-foreground: 230 25% 14%;
-    --sidebar-primary: 28 96% 54%;
+    --sidebar-background: 42 55% 98%;
+    --sidebar-foreground: 230 22% 16%;
+    --sidebar-primary: 35 92% 56%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 178 52% 90%;
-    --sidebar-accent-foreground: 230 25% 14%;
-    --sidebar-border: 230 18% 78%;
-    --sidebar-ring: 280 90% 60%;
+    --sidebar-accent: 140 30% 92%;
+    --sidebar-accent-foreground: 230 22% 16%;
+    --sidebar-border: 230 16% 80%;
+    --sidebar-ring: 35 92% 56%;
 
-    /* Extra hues for gradients */
-    --hue-a: 28 96% 54%;
-    --hue-b: 322 85% 52%;
-    --hue-c: 198 90% 48%;
-    --hue-d: 280 90% 60%;
+    /* Gradient hues */
+    --hue-a: 35 92% 56%; /* saffron */
+    --hue-b: 8 74% 55%;  /* vermilion */
+    --hue-c: 140 30% 55%; /* sage green mid */
+    --hue-d: 25 45% 48%; /* earthy amber */
   }
 
   .dark {
-    --background: 240 28% 6%;
+    --background: 240 30% 6%;
     --foreground: 0 0% 98%;
 
     --card: 240 24% 10%;
@@ -150,16 +150,16 @@
     --popover: 240 24% 10%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 28 96% 58%;
+    --primary: 35 92% 58%;
     --primary-foreground: 25 20% 12%;
 
-    --secondary: 178 25% 18%;
+    --secondary: 140 22% 18%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 240 23% 16%;
     --muted-foreground: 215 18% 70%;
 
-    --accent: 322 85% 58%;
+    --accent: 8 74% 58%;
     --accent-foreground: 25 20% 12%;
 
     --destructive: 0 63% 31%;
@@ -167,16 +167,16 @@
 
     --border: 240 22% 22%;
     --input: 240 22% 22%;
-    --ring: 280 90% 60%;
+    --ring: 35 92% 58%;
 
-    --sidebar-background: 240 28% 6%;
+    --sidebar-background: 240 30% 6%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 28 96% 58%;
+    --sidebar-primary: 35 92% 58%;
     --sidebar-primary-foreground: 25 20% 12%;
-    --sidebar-accent: 178 25% 18%;
+    --sidebar-accent: 140 22% 18%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 240 22% 22%;
-    --sidebar-ring: 280 90% 60%;
+    --sidebar-ring: 35 92% 58%;
   }
 }
 
@@ -193,9 +193,9 @@
     -moz-osx-font-smoothing: grayscale;
     font-variant-numeric: lining-nums tabular-nums;
     background-image:
-      radial-gradient(1200px 600px at 0% -10%, hsl(var(--hue-a) / 0.16), transparent 60%),
-      radial-gradient(1200px 600px at 110% 10%, hsl(var(--hue-b) / 0.14), transparent 60%),
-      radial-gradient(1000px 500px at 50% 110%, hsl(var(--hue-c) / 0.12), transparent 60%);
+      radial-gradient(1200px 600px at 0% -10%, hsl(var(--hue-a) / 0.10), transparent 60%),
+      radial-gradient(1200px 600px at 110% 10%, hsl(var(--hue-b) / 0.08), transparent 60%),
+      radial-gradient(1000px 500px at 50% 110%, hsl(var(--hue-c) / 0.06), transparent 60%);
     background-attachment: fixed;
   }
 
